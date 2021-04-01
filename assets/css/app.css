@@ -57,8 +57,3 @@ html body #__nuxt #__layout>div {
 button {
   cursor: pointer;
 }
-
-.primary-button {
-  padding: 12px 30px;
-  border-radius: 5px;
-}
