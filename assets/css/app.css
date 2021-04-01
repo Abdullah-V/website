@@ -1,0 +1,64 @@
+html {
+  --primary: #106EE3;
+  --secondary: #034AA1;
+}
+
+html.dark-mode {
+  --background: black;
+  --text: white;
+}
+
+html.light-mode {
+  --background: white;
+  --text: black;
+}
+
+html,
+body,
+#__nuxt,
+#__layout
+{
+  font-family:
+    'Source Sans Pro',
+    -apple-system,
+    BlinkMacSystemFont,
+    'Segoe UI',
+    Roboto,
+    'Helvetica Neue',
+    Arial,
+    sans-serif;
+  font-size: 16px;
+  word-spacing: 1px;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  width: 100%;
+  height: 100%;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  outline: none;
+  scroll-behavior: smooth;
+  text-decoration: none;
+  border: 0;
+}
+
+html body #__nuxt #__layout>div {
+  width: 100%;
+  height: 100%;
+}
+
+button {
+  cursor: pointer;
+}
+
+.primary-button {
+  padding: 12px 30px;
+  border-radius: 5px;
+}
