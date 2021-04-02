@@ -1,15 +1,18 @@
 html {
+  /* #2563EB */
   --primary: #106EE3;
   --secondary: #034AA1;
 }
 
 html.dark-mode {
-  --background: black;
+  --primary-background: #111827;
+  --secondary-background: #1f2937;
   --text: white;
 }
 
 html.light-mode {
-  --background: white;
+  --primary-background: #ffffff;
+  --secondary-background: #f3f4f6;
   --text: black;
 }
 
@@ -35,6 +38,8 @@ body,
   -webkit-font-smoothing: antialiased;
   width: 100%;
   height: 100%;
+  background: var(--primary-background);
+  color: var(--text);
 }
 
 *,

@@ -10,7 +10,9 @@
         <p>Fullstack web developer</p>
         <span><i style="margin-right: 3px" class="fas fa-map-marker-alt"></i> Azerbaijan - Baku</span>
         <span><i style="margin-right: 3px" class="far fa-calendar-alt"></i> 26.01.2005</span>
-          <button class="primary-button resume-button">See resume</button>
+        <span><i style="margin-right: 3px" class="fas fa-building"></i>I am currently not working for any company.</span>
+        <span> <i class="fas fa-info-circle"></i> I am currently eligible to work as a fullstack, frontend or backend developer for office, remote or freelance jobs. </span>
+        <button class="primary-button resume-button">See resume</button>
       </div>
 
       <div class="container2">
@@ -35,19 +37,53 @@
       </div>
     </div>
 
+      <!--  TODO: Add scroll down animation -->
+
+    <div class="projects-section">
+      <h1 class="section-title">Projects</h1>
+
+      <div class="projects-container">
+        <Project></Project>
+        <Project></Project>
+        <Project></Project>
+        <Project></Project>
+        <Project></Project>
+        <Project></Project>
+      </div>
+
+    </div>
+
 
   </div>
 </template>
 
 <script>
-export default {}
+import Project from "~/components/Project";
+
+export default {
+  created() {
+    this.$colorMode.preference = 'dark'
+  },
+  components: {
+    Project,
+  },
+  data() {
+    return {
+      projects: [
+        {
+          title: "Cargoglobal",
+
+        }
+      ]
+    }
+  }
+}
 </script>
 
 <style scoped>
 #index-root {
   width: 100%;
   height: 100%;
-  padding: 30px 0;
 }
 
 .section1 {
@@ -55,20 +91,23 @@ export default {}
   display: flex;
   justify-content: space-evenly;
   align-items: center;
+  flex-wrap: wrap;
+  margin-top: 20px;
 }
 
 .section1 .container1 {
-  width: 350px;
-  height: 500px;
+  width: 380px;
+  height: 540px;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
-  background: white;
+  padding: 0 10px;
 }
 
 .section1 .container1 i {
   color: var(--primary);
+  font-size: 18px;
 }
 
 .image-container {
@@ -114,10 +153,11 @@ p {
   flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
+  padding: 0 10px;
 }
 
 .social-buttons-container {
-  width: 80%;
+  width: 90%;
   height: 60px;
   display: flex;
   align-items: center;
@@ -136,6 +176,23 @@ p {
 
 .social-button:hover {
   transform: scale(1.08);
+}
+
+.projects-section {
+  margin: 40px 0;
+}
+
+.projects-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.section-title {
+  text-align: center;
+  margin: 80px 0;
+  font-size: 35px;
 }
 
 </style>
