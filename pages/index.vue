@@ -48,12 +48,30 @@
 
     </div>
 
+    <div class="skills-section">
+      <h1 class="section-title">Languages & frameworks</h1>
+
+      <div class="skills-container">
+        <Skill />
+        <Skill />
+        <Skill />
+        <Skill />
+        <Skill />
+        <Skill />
+        <Skill />
+        <Skill />
+      </div>
+
+
+    </div>
+
 
   </div>
 </template>
 
 <script>
 import Project from "~/components/Project";
+import Skill from "~/components/Skill";
 
 export default {
   created() {
@@ -74,6 +92,7 @@ export default {
   },
   components: {
     Project,
+    Skill
   },
   data() {
     return {
@@ -320,6 +339,13 @@ p {
   text-align: center;
   margin: 80px 0;
   font-size: 35px;
+}
+
+.skills-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-evenly;
 }
 
 </style>
