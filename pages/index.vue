@@ -49,17 +49,10 @@
     </div>
 
     <div class="skills-section">
-      <h1 class="section-title">Languages & frameworks</h1>
+      <h1 class="section-title">Languages & frameworks & tools</h1>
 
       <div class="skills-container">
-        <Skill />
-        <Skill />
-        <Skill />
-        <Skill />
-        <Skill />
-        <Skill />
-        <Skill />
-        <Skill />
+        <Skill v-for="skill in skills" :key="skill.name" :skill-data="skill" />
       </div>
 
 
@@ -96,6 +89,69 @@ export default {
   },
   data() {
     return {
+      skills: [
+        {
+          name: "HTML",
+          percent: "80%",
+          iconFileName: "html.svg"
+        },
+        {
+          name: "CSS",
+          percent: "70%",
+          iconFileName: "css.svg"
+        },
+
+        {
+          name: "Javascript",
+          percent: "90%",
+          iconFileName: "javascript.svg"
+        },
+        {
+          name: "Vue.js",
+          percent: "95%",
+          iconFileName: "vuejs.svg"
+        },
+        {
+          name: "Nuxt.js",
+          percent: "90%",
+          iconFileName: "nuxtjs.svg"
+        },
+        {
+          name: "Node.js",
+          percent: "90%",
+          iconFileName: "nodejs.svg"
+        },
+        {
+          name: "Express.js",
+          percent: "80%",
+          iconFileName: "expressjs.svg"
+        },
+        {
+          name: "Electron.js",
+          percent: "80%",
+          iconFileName: "electronjs.svg"
+        },
+        {
+          name: "MongoDB",
+          percent: "70%",
+          iconFileName: "mongodb.svg"
+        },
+        {
+          name: "Figma",
+          percent: "90%",
+          iconFileName: "figma.svg"
+        },
+        {
+          name: "Git",
+          percent: "70%",
+          iconFileName: "git.svg"
+        },
+        {
+          name: "BASH",
+          percent: "70%",
+          iconFileName: "bash.svg"
+        },
+      ],
       projects: [
         // Add this website to projects
         {

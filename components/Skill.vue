@@ -1,8 +1,11 @@
 <template>
   <div id="skill-root">
-    <img id="skill-icon" :src="require('~/assets/icons/vuejs.svg')" alt="">
+    <img id="skill-icon" :src="require(`~/assets/icons/${skillData.iconFileName}`)" alt="">
     <div class="skill-container">
-      <h2>Vue.js</h2>
+      <h2>{{ skillData.name }}</h2>
+      <div class="progress-bar">
+        <div class="inner-progress-bar" :style="{width: skillData.percent}">{{ skillData.percent }}</div>
+      </div>
     </div>
   </div>
 </template>
@@ -23,11 +26,14 @@ export default {
   border-radius: 5px;
   display: flex;
   align-items: center;
+  margin: 20px;
+  padding: 10px;
 }
 
 #skill-icon {
   width: 20%;
   height: 100%;
+  margin-right: 10px;
 }
 
 .skill-container {
@@ -36,7 +42,24 @@ export default {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 40%;
+  border: 1px solid var(--primary);
+  border-radius: 3px;
+}
+
+.inner-progress-bar {
+  height: 100%;
+  background: var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  color: white;
+  padding-right: 10px;
 }
 
 </style>
