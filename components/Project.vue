@@ -1,15 +1,14 @@
 <template>
   <div id="project-root">
-    <img id="project-image" src="https://pbs.twimg.com/profile_images/1362314692962746369/Fd6wHhPx_400x400.jpg" alt="image from project">
-    <h2 id="project-title">Cargoglobal</h2>
-    <h4 id="project-description">Cargoglobal is a sitefor share logistic adversiments</h4>
+    <img v-if="projectData.imageFileName" id="project-image" :src="require(`~/assets/images/${projectData.imageFileName}`)" alt="image from project">
+    <h2 id="project-title">{{ projectData.name }}</h2>
+    <h4 id="project-description">{{ projectData.description }}</h4>
     <div class="tech-stack">
-      <img class="icon" src="~/static/icons/vuejs.png" alt="icon">
-      <img class="icon" src="~/static/icons/nuxtjs.png" alt="icon">
+      <img :title="item.name" v-for="item in projectData.techStack" class="icon" :src="require(`~/assets/icons/${item.iconFileName}`)" alt="icon">
     </div>
     <div id="project-action-buttons">
-      <button id="live">Live demo</button>
-      <button id="source">Source codes</button>
+      <button v-if="projectData.liveDemoLink" @click="openLink(projectData.liveDemoLink)" id="live">Live demo</button>
+      <button @click="openLink(projectData.sourceCodeLink)" id="source">Source codes</button>
     </div>
   </div>
 </template>
@@ -17,7 +16,14 @@
 <script>
 export default {
   name: "Project",
-  props: ["data"]
+  props: ["projectData"],
+  methods: {
+    openLink(link) {
+      if(process.client) {
+        window.open(link)
+      }
+    }
+  }
 }
 </script>
 
@@ -26,7 +32,7 @@ export default {
 #project-root {
   width: 350px;
   height: auto;
-  padding: 10px;
+  padding: 0 10px 10px 10px;
   background: var(--secondary-background);
   margin: 20px;
   border-radius: 4px;
@@ -37,6 +43,7 @@ export default {
   width: 100%;
   height: 250px;
   border-radius: 2px;
+  margin-top: 10px;
 }
 
 #project-title {
@@ -56,8 +63,8 @@ export default {
 }
 
 .icon {
-  width: 50px;
-  height: 50px;
+  width: 40px;
+  height: 40px;
   margin: 5px 20px 5px 0;
 }
 

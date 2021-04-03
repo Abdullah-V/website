@@ -43,12 +43,7 @@
       <h1 class="section-title">Projects</h1>
 
       <div class="projects-container">
-        <Project></Project>
-        <Project></Project>
-        <Project></Project>
-        <Project></Project>
-        <Project></Project>
-        <Project></Project>
+          <Project v-for="project in projects" :key="project.name" :project-data="project"></Project>
       </div>
 
     </div>
@@ -63,6 +58,19 @@ import Project from "~/components/Project";
 export default {
   created() {
     this.$colorMode.preference = 'dark'
+
+
+    // this.$axios.$get('https://api.github.com/users/Abdullah-V/repos')
+    //   .then(async (result) => {
+    //     result = await result.sort(function(a, b){
+    //       return b.stargazers_count - a.stargazers_count;
+    //     })
+    //     // console.log(result[0].stargazers_count)
+    //     this.projects = await result
+    //     console.log(this.projects[0].name)
+    //   })
+
+
   },
   components: {
     Project,
@@ -70,10 +78,129 @@ export default {
   data() {
     return {
       projects: [
+        // Add this website to projects
         {
-          title: "Cargoglobal",
-
-        }
+          name: 'Cargoglobal',
+          description: 'Cargoglobal is a sitefor share logistic adversiments',
+          sourceCodeLink: 'https://github.com/Abdullah-V/cargoglobal-frontend',
+          liveDemoLink: 'https://cargoglobal.herokuapp.com',
+          imageFileName: 'cargoglobal.png',
+          techStack: [
+            {
+              name: 'html',
+              iconFileName: 'html.svg'
+            },
+            {
+              name: 'css',
+              iconFileName: 'css.svg'
+            },
+            {
+              name: 'javascript',
+              iconFileName: 'javascript.svg'
+            },
+            {
+              name: 'nuxt.js',
+              iconFileName: 'nuxtjs.svg'
+            },
+            {
+              name: 'mongodb',
+              iconFileName: 'mongodb.svg'
+            },
+            {
+              name: 'nodejs',
+              iconFileName: 'nodejs.svg'
+            },
+            {
+              name: 'express.js',
+              iconFileName: 'expressjs.svg'
+            },
+          ]
+        },
+        {
+          name: 'Twitter clone',
+          description: 'MEVN stack twitter clone',
+          sourceCodeLink: 'https://github.com/Abdullah-V/MEVN-stack-twitter-clone',
+          liveDemoLink: 'https://twitter-cln.herokuapp.com/',
+          imageFileName: 'twitterClone.png',
+          techStack: [
+            {
+              name: 'html',
+              iconFileName: 'html.svg'
+            },
+            {
+              name: 'css',
+              iconFileName: 'css.svg'
+            },
+            {
+              name: 'javascript',
+              iconFileName: 'javascript.svg'
+            },
+            {
+              name: 'vue.js',
+              iconFileName: 'vuejs.svg'
+            },
+            {
+              name: 'mongodb',
+              iconFileName: 'mongodb.svg'
+            },
+            {
+              name: 'nodejs',
+              iconFileName: 'nodejs.svg'
+            },
+            {
+              name: 'express.js',
+              iconFileName: 'expressjs.svg'
+            },
+          ]
+        },
+        {
+          name: 'Password generator',
+          description: 'Simple password generator',
+          sourceCodeLink: 'https://github.com/Abdullah-V/Password-Generator-V2',
+          imageFileName: 'password-gen.png',
+          techStack: [
+            {
+              name: 'html',
+              iconFileName: 'html.svg'
+            },
+            {
+              name: 'css',
+              iconFileName: 'css.svg'
+            },
+            {
+              name: 'javascript',
+              iconFileName: 'javascript.svg'
+            },
+            {
+              name: 'vue.js',
+              iconFileName: 'vuejs.svg'
+            },
+          ]
+        },
+        {
+          name: 'Color palette generator',
+          description: 'Simple color palette generator',
+          sourceCodeLink: 'https://github.com/Abdullah-V/Color-Palette-Generator',
+          imageFileName: 'palette-gen.png',
+          techStack: [
+            {
+              name: 'html',
+              iconFileName: 'html.svg'
+            },
+            {
+              name: 'css',
+              iconFileName: 'css.svg'
+            },
+            {
+              name: 'javascript',
+              iconFileName: 'javascript.svg'
+            },
+            {
+              name: 'vue.js',
+              iconFileName: 'vuejs.svg'
+            },
+          ]
+        },
       ]
     }
   }
