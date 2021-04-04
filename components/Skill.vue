@@ -1,5 +1,9 @@
 <template>
-  <div id="skill-root">
+  <div
+    id="skill-root"
+    data-aos="zoom-in"
+    data-aos-duration="600"
+  >
     <img id="skill-icon" :src="require(`~/assets/icons/${skillData.iconFileName}`)" alt="">
     <div class="skill-container">
       <h2>{{ skillData.name }}</h2>
@@ -28,6 +32,7 @@ export default {
   align-items: center;
   margin: 20px;
   padding: 10px;
+  cursor: pointer;
 }
 
 #skill-icon {

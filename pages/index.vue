@@ -55,9 +55,15 @@
         <Skill v-for="skill in skills" :key="skill.name" :skill-data="skill" />
       </div>
 
-
     </div>
 
+    <div v-if="repos.length" class="repos-section">
+      <h1 class="section-title">Github repositories</h1>
+
+      <div class="repos-container">
+        <Repo v-for="repo in repos" :repo-data="repo" :key="repo.id" />
+      </div>
+    </div>
 
   </div>
 </template>
@@ -65,30 +71,33 @@
 <script>
 import Project from "~/components/Project";
 import Skill from "~/components/Skill";
+import Repo from "~/components/Repo";
 
 export default {
   created() {
     this.$colorMode.preference = 'dark'
 
 
-    // this.$axios.$get('https://api.github.com/users/Abdullah-V/repos')
-    //   .then(async (result) => {
-    //     result = await result.sort(function(a, b){
-    //       return b.stargazers_count - a.stargazers_count;
-    //     })
-    //     // console.log(result[0].stargazers_count)
-    //     this.projects = await result
-    //     console.log(this.projects[0].name)
-    //   })
+    this.$axios.$get('https://api.github.com/users/Abdullah-V/repos')
+      .then(async (result) => {
+        result = await result.sort(function(a, b){
+          return b.stargazers_count - a.stargazers_count;
+        })
+        // .filter(repo => {return repo.fork === false})
+        // console.log(result[0].stargazers_count)
+        this.repos = await result
+      })
 
 
   },
   components: {
     Project,
-    Skill
+    Skill,
+    Repo
   },
   data() {
     return {
+      repos: [],
       skills: [
         {
           name: "HTML",
@@ -397,7 +406,8 @@ p {
   font-size: 35px;
 }
 
-.skills-container {
+.skills-container,
+.repos-container {
   display: flex;
   flex-wrap: wrap;
   align-items: center;

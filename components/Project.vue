@@ -1,5 +1,9 @@
 <template>
-  <div id="project-root">
+  <div
+    id="project-root"
+    data-aos="zoom-in"
+    data-aos-duration="600"
+  >
     <img v-if="projectData.imageFileName" id="project-image" :src="require(`~/assets/images/${projectData.imageFileName}`)" alt="image from project">
     <h2 id="project-title">{{ projectData.name }}</h2>
     <h4 id="project-description">{{ projectData.description }}</h4>
