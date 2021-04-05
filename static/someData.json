@@ -1,0 +1,214 @@
+{
+  "skills": [
+    {
+      "name": "HTML",
+      "percent": "80%",
+      "iconFileName": "html.svg"
+    },
+    {
+      "name": "CSS",
+      "percent": "70%",
+      "iconFileName": "css.svg"
+    },
+
+    {
+      "name": "Javascript",
+      "percent": "90%",
+      "iconFileName": "javascript.svg"
+    },
+    {
+      "name": "Vue.js",
+      "percent": "95%",
+      "iconFileName": "vuejs.svg"
+    },
+    {
+      "name": "Nuxt.js",
+      "percent": "90%",
+      "iconFileName": "nuxtjs.svg"
+    },
+    {
+      "name": "Node.js",
+      "percent": "90%",
+      "iconFileName": "nodejs.svg"
+    },
+    {
+      "name": "Express.js",
+      "percent": "80%",
+      "iconFileName": "expressjs.svg"
+    },
+    {
+      "name": "Electron.js",
+      "percent": "80%",
+      "iconFileName": "electronjs.svg"
+    },
+    {
+      "name": "MongoDB",
+      "percent": "70%",
+      "iconFileName": "mongodb.svg"
+    },
+    {
+      "name": "Figma",
+      "percent": "90%",
+      "iconFileName": "figma.svg"
+    },
+    {
+      "name": "Git",
+      "percent": "70%",
+      "iconFileName": "git.svg"
+    },
+    {
+      "name": "BASH",
+      "percent": "70%",
+      "iconFileName": "bash.svg"
+    }
+  ],
+  "projects": [
+    {
+      "name": "Cargoglobal",
+      "description": "Cargoglobal is a sitefor share logistic adversiments",
+      "sourceCodeLink": "https://github.com/Abdullah-V/cargoglobal-frontend",
+      "liveDemoLink": "https://cargoglobal.herokuapp.com",
+      "imageFileName": "cargoglobal.png",
+      "techStack": [
+        {
+          "name": "html",
+          "iconFileName": "html.svg"
+        },
+        {
+          "name": "css",
+          "iconFileName": "css.svg"
+        },
+        {
+          "name": "javascript",
+          "iconFileName": "javascript.svg"
+        },
+        {
+          "name": "nuxt.js",
+          "iconFileName": "nuxtjs.svg"
+        },
+        {
+          "name": "mongodb",
+          "iconFileName": "mongodb.svg"
+        },
+        {
+          "name": "nodejs",
+          "iconFileName": "nodejs.svg"
+        },
+        {
+          "name": "express.js",
+          "iconFileName": "expressjs.svg"
+        }
+      ]
+    },
+    {
+      "name": "Twitter clone",
+      "description": "MEVN stack twitter clone",
+      "sourceCodeLink": "https://github.com/Abdullah-V/MEVN-stack-twitter-clone",
+      "liveDemoLink": "https://twitter-cln.herokuapp.com/",
+      "imageFileName": "twitterClone.png",
+      "techStack": [
+        {
+          "name": "html",
+          "iconFileName": "html.svg"
+        },
+        {
+          "name": "css",
+          "iconFileName": "css.svg"
+        },
+        {
+          "name": "javascript",
+          "iconFileName": "javascript.svg"
+        },
+        {
+          "name": "vue.js",
+          "iconFileName": "vuejs.svg"
+        },
+        {
+          "name": "mongodb",
+          "iconFileName": "mongodb.svg"
+        },
+        {
+          "name": "nodejs",
+          "iconFileName": "nodejs.svg"
+        },
+        {
+          "name": "express.js",
+          "iconFileName": "expressjs.svg"
+        }
+      ]
+    },
+    {
+      "name": "Personal website",
+      "description": "My personal website(this site)",
+      "sourceCodeLink": "https://github.com/Abdullah-V/website",
+      "liveDemoLink": "http://localhost:3000",
+      "imageFileName": "website.png",
+      "techStack": [
+        {
+          "name": "html",
+          "iconFileName": "html.svg"
+        },
+        {
+          "name": "css",
+          "iconFileName": "css.svg"
+        },
+        {
+          "name": "javascript",
+          "iconFileName": "javascript.svg"
+        },
+        {
+          "name": "nuxt.js",
+          "iconFileName": "nuxtjs.svg"
+        }
+      ]
+    },
+    {
+      "name": "Password generator",
+      "description": "Simple password generator",
+      "sourceCodeLink": "https://github.com/Abdullah-V/Password-Generator-V2",
+      "imageFileName": "password-gen.png",
+      "techStack": [
+        {
+          "name": "html",
+          "iconFileName": "html.svg"
+        },
+        {
+          "name": "css",
+          "iconFileName": "css.svg"
+        },
+        {
+          "name": "javascript",
+          "iconFileName": "javascript.svg"
+        },
+        {
+          "name": "vue.js",
+          "iconFileName": "vuejs.svg"
+        }
+      ]
+    },
+    {
+      "name": "Color palette generator",
+      "description": "Simple color palette generator",
+      "sourceCodeLink": "https://github.com/Abdullah-V/Color-Palette-Generator",
+      "imageFileName": "palette-gen.png",
+      "techStack": [
+        {
+          "name": "html",
+          "iconFileName": "html.svg"
+        },
+        {
+          "name": "css",
+          "iconFileName": "css.svg"
+        },
+        {
+          "name": "javascript",
+          "iconFileName": "javascript.svg"
+        },
+        {
+          "name": "vue.js",
+          "iconFileName": "vuejs.svg"
+        }
+      ]
+    }
+  ]
+}
