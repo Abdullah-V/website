@@ -1,4 +1,4 @@
-# portfolio
+# Personal website
 
 ## Build Setup
 
