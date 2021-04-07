@@ -1,5 +1,10 @@
 <template>
-  <div id="repo-root" v-if="repoData.fork === false">
+  <div
+    id="repo-root"
+    v-if="repoData.fork === false"
+    data-aos="zoom-in"
+    data-aos-duration="600"
+  >
     <span id="repo-header"><a target="_blank" :href="repoData.html_url" id="repo-name">{{ repoData.name }}</a> <span id="repo-infos"> <p>{{ repoData.stargazers_count }} <i class="fas fa-star"></i></p> <img v-if="repoData.language" :src="require(`~/assets/icons/${repoData.language.toLowerCase().replace('vue','vuejs')}.svg`)" alt=""> </span> </span>
     <span id="repo-description">{{ repoData.description }}</span>
   </div>

@@ -1,6 +1,8 @@
 <template>
   <div id="index-root">
 
+    <button id="move-top"><i class="fas fa-arrow-up"></i></button>
+
     <div class="section1">
       <div class="container1">
         <div class="image-container">
@@ -18,8 +20,8 @@
       <div class="container2">
         <h1>Little about me</h1>
         <p>
-          My name is Abdullah. I was born in Baku,
-          Azerbaijan in 2005. I started my school life
+          My name is Abdullah. I was born in Azerbaijan, Baku
+           in 2005. I started my school life
           in 2011. I am studying in 10th grade. I
           started to be interested in programming in
           March 2020.My motivation to start
@@ -227,6 +229,29 @@ p {
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-evenly;
+}
+
+#move-top {
+  position: fixed;
+  right: 40px;
+  bottom: 40px;
+  background: var(--secondary-background);
+  width: 50px;
+  height: 50px;
+  color: var(--text);
+  z-index: 99;
+  border-radius: 50%;
+  font-size: 18px;
+  transition: 300ms all;
+
+
+  -webkit-box-shadow: 0px 0px 8px 0px rgba(0,0,0,0.25);
+  -moz-box-shadow: 0px 0px 8px 0px rgba(0,0,0,0.25);
+  box-shadow: 0px 0px 8px 0px rgba(0,0,0,0.25);
+}
+
+#move-top:hover {
+  transform: scale(1.2);
 }
 
 </style>
