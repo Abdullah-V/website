@@ -1,7 +1,7 @@
 <template>
   <div id="index-root">
 
-    <button id="move-top"><i class="fas fa-arrow-up"></i></button>
+    <button @click="moveTop()" id="move-top"><i class="fas fa-arrow-up"></i></button>
 
     <div class="section1">
       <div class="container1">
@@ -78,19 +78,30 @@ import someData from '~/static/someData.json'
 
 export default {
   created() {
-    this.$colorMode.preference = 'dark'
+    if(process.client) {
+      window.addEventListener("scroll",() => {
+        var sh = window.pageYOffset // scroll height
+        var btn = this.$el.querySelector("#move-top")
+        if(sh >= 456){
+          btn.classList.add("active")
+        }else if(sh < 456){
+          btn.classList.remove("active")
+        }
+      })
+    }
 
+
+
+
+    // this.$colorMode.preference = 'dark'
 
     this.$axios.$get('https://api.github.com/users/Abdullah-V/repos')
       .then(async (result) => {
         result = await result.sort(function(a, b){
           return b.stargazers_count - a.stargazers_count;
         })
-        // .filter(repo => {return repo.fork === false})
-        // console.log(result[0].stargazers_count)
         this.repos = await result
       })
-
 
   },
   components: {
@@ -103,6 +114,17 @@ export default {
       repos: [],
       skills: someData.skills,
       projects: someData.projects,
+    }
+  },
+  methods: {
+    moveTop() {
+      if(process.client){
+        window.scrollTo({
+          top: 0,
+          left: 0,
+          behavior: "smooth"
+        })
+      }
     }
   }
 }
@@ -233,8 +255,8 @@ p {
 
 #move-top {
   position: fixed;
-  right: 40px;
-  bottom: 40px;
+  right: 50px;
+  bottom: 30px;
   background: var(--secondary-background);
   width: 50px;
   height: 50px;
@@ -243,11 +265,18 @@ p {
   border-radius: 50%;
   font-size: 18px;
   transition: 300ms all;
-
+  pointer-events: none;
+  opacity: 0;
 
   -webkit-box-shadow: 0px 0px 8px 0px rgba(0,0,0,0.25);
   -moz-box-shadow: 0px 0px 8px 0px rgba(0,0,0,0.25);
   box-shadow: 0px 0px 8px 0px rgba(0,0,0,0.25);
+}
+
+#move-top.active {
+  bottom: 50px;
+  opacity: 1;
+  pointer-events: auto;
 }
 
 #move-top:hover {

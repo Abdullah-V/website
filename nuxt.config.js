@@ -1,3 +1,5 @@
+const HOST = "http://localhost:3000"
+
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
@@ -41,12 +43,17 @@ export default {
     // https://go.nuxtjs.dev/pwa
     '@nuxtjs/pwa',
     '@nuxtjs/axios',
-    '@nuxtjs/sitemap'
+    '@nuxtjs/sitemap',
+    '@nuxtjs/robots',
   ],
 
   sitemap: {
     hostname: 'http://localhost:3000',
     gzip: true,
+  },
+
+  robots: {
+    Sitemap: `${HOST}/sitemap.xml`
   },
 
   // PWA module configuration: https://go.nuxtjs.dev/pwa
