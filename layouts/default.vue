@@ -1,62 +1,105 @@
 <template>
   <div>
     <Nuxt />
+    <button @click="moveTop()" id="move-top"><i class="fas fa-arrow-up"></i></button>
+    <div id="footer">
+      <a target="_blank" href="https://github.com/Abdullah-V/website">Source code</a>
+      <span>Copyright (c) 2021 Abdullah Veliyev</span>
+      <a target="_blank" href="https://github.com/Abdullah-V/website/blob/master/LICENSE">MIT license</a>
+      <a href="#top">Back to top</a>
+    </div>
   </div>
 </template>
 
+<script>
+
+export default {
+  created() {
+    if(process.client) {
+      window.addEventListener("scroll",() => {
+        var sh = window.pageYOffset // scroll height
+        var btn = this.$el.querySelector("#move-top")
+        if(sh >= 456){
+          btn.classList.add("active")
+        }else if(sh < 456){
+          btn.classList.remove("active")
+        }
+
+        var d = document.documentElement;
+        var offset = d.scrollTop + window.innerHeight;
+        var height = d.offsetHeight;
+
+        if (offset >= height - 60) {
+          btn.classList.remove("active")
+        }
+
+      })
+    }
+  },
+  methods: {
+    moveTop() {
+      if(process.client){
+        window.scrollTo({
+          top: 0,
+          left: 0,
+          behavior: "smooth"
+        })
+      }
+    },
+  }
+}
+
+</script>
+
 <style>
-html {
-  font-family:
-    'Source Sans Pro',
-    -apple-system,
-    BlinkMacSystemFont,
-    'Segoe UI',
-    Roboto,
-    'Helvetica Neue',
-    Arial,
-    sans-serif;
-  font-size: 16px;
-  word-spacing: 1px;
-  -ms-text-size-adjust: 100%;
-  -webkit-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  box-sizing: border-box;
+
+#move-top {
+  position: fixed;
+  right: 50px;
+  bottom: 30px;
+  background: var(--secondary-background);
+  width: 50px;
+  height: 50px;
+  color: var(--text);
+  z-index: 99;
+  border-radius: 50%;
+  font-size: 18px;
+  transition: 300ms all;
+  pointer-events: none;
+  opacity: 0;
+
+  -webkit-box-shadow: 0px 0px 8px 0px rgba(0,0,0,0.25);
+  -moz-box-shadow: 0px 0px 8px 0px rgba(0,0,0,0.25);
+  box-shadow: 0px 0px 8px 0px rgba(0,0,0,0.25);
 }
 
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-  margin: 0;
+#move-top.active {
+  bottom: 50px;
+  opacity: 1;
+  pointer-events: auto;
 }
 
-.button--green {
-  display: inline-block;
-  border-radius: 4px;
-  border: 1px solid #3b8070;
-  color: #3b8070;
-  text-decoration: none;
-  padding: 10px 30px;
+#move-top:hover {
+  transform: scale(1.2);
 }
 
-.button--green:hover {
-  color: #fff;
-  background-color: #3b8070;
+#footer {
+  width: 100%;
+  height: 100px;
+  background: var(--secondary-background);
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  color: gray;
+  font-size: 20px;
 }
 
-.button--grey {
-  display: inline-block;
-  border-radius: 4px;
-  border: 1px solid #35495e;
-  color: #35495e;
-  text-decoration: none;
-  padding: 10px 30px;
-  margin-left: 15px;
+a {
+  color: gray;
 }
 
-.button--grey:hover {
-  color: #fff;
-  background-color: #35495e;
+a:hover {
+  text-decoration: underline;
 }
+
 </style>

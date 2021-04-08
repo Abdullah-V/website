@@ -3,7 +3,7 @@ const HOST = "http://localhost:3000"
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'Abdullah',
+    title: '. /Abdullah',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -54,6 +54,11 @@ export default {
 
   robots: {
     Sitemap: `${HOST}/sitemap.xml`
+  },
+
+  env: {
+    EMAIL: process.env.EMAIL,
+    EMAIL_PASSWORD: process.env.EMAIL_PASSWORD,
   },
 
   // PWA module configuration: https://go.nuxtjs.dev/pwa

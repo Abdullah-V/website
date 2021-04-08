@@ -16,6 +16,7 @@
     "@nuxtjs/sitemap": "^2.4.0",
     "aos": "^2.3.4",
     "core-js": "^3.9.1",
+    "nodemailer": "^6.5.0",
     "nuxt": "^2.15.3"
   },
   "devDependencies": {

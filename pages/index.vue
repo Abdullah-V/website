@@ -1,7 +1,6 @@
 <template>
   <div id="index-root">
 
-    <button @click="moveTop()" id="move-top"><i class="fas fa-arrow-up"></i></button>
 
     <div id="section1">
       <div class="container1">
@@ -68,7 +67,7 @@
         <Repo v-for="repo in repos.slice(0,6)" :repo-data="repo" :key="repo.id" />
       </div>
 
-      <nuxt-link to="/repos" tag="button" id="see-all-repos">See all repositories</nuxt-link>
+      <nuxt-link to="/repos" tag="button" id="see-all-repos">See all repositories <i style="margin-left: 10px" class="far fa-arrow-alt-circle-right"></i> </nuxt-link>
 
     </div>
 
@@ -82,7 +81,7 @@
           <input @keyup="validateForm()" v-model="contactInfos.email" type="email" placeholder="Your email">
           <input @keyup="validateForm()" v-model="contactInfos.subject" type="text" placeholder="Subject">
           <textarea @keyup="validateForm()" v-model="contactInfos.message" placeholder="Message"></textarea>
-          <button :class="{disabled: !isValidForm,enabled: isValidForm}" id="submit"><i style="margin-right: 15px" class="fas fa-paper-plane"></i>Submit</button>
+          <button :disabled="!isValidForm" @click="send()" :class="{disabled: !isValidForm,enabled: isValidForm}" id="submit"><i style="margin-right: 15px" class="fas fa-paper-plane"></i>Submit</button>
         </div>
       </div>
 
@@ -96,25 +95,14 @@ import Project from "~/components/Project";
 import Skill from "~/components/Skill";
 import Repo from "~/components/Repo";
 import someData from '~/static/someData.json'
+// import sendEmail from "~/static/sendEmail";
 
 export default {
   created() {
-    if(process.client) {
-      window.addEventListener("scroll",() => {
-        var sh = window.pageYOffset // scroll height
-        var btn = this.$el.querySelector("#move-top")
-        if(sh >= 456){
-          btn.classList.add("active")
-        }else if(sh < 456){
-          btn.classList.remove("active")
-        }
-      })
-    }
 
 
 
-
-    // this.$colorMode.preference = 'dark'
+    this.$colorMode.preference = 'dark'
 
     this.$axios.$get('https://api.github.com/users/Abdullah-V/repos')
       .then(async (result) => {
@@ -145,19 +133,14 @@ export default {
     }
   },
   methods: {
-    moveTop() {
-      if(process.client){
-        window.scrollTo({
-          top: 0,
-          left: 0,
-          behavior: "smooth"
-        })
-      }
-    },
     validateForm() {
       const emailRegex = /[A-Z0-9._%+-]+@[A-Z0-9-]+.+.[A-Z]{2,4}/igm
       this.isValidForm = !!(this.contactInfos.name && emailRegex.test(this.contactInfos.email) && this.contactInfos.subject && this.contactInfos.message);
     },
+    send() {
+      // sendEmail()
+      console.log("send")
+    }
   }
 }
 </script>
@@ -257,7 +240,7 @@ p {
 }
 
 .social-button:hover {
-  transform: scale(1.08);
+  transform: scale(1.13);
 }
 
 #projects-section {
@@ -284,40 +267,12 @@ p {
   margin: auto;
 }
 
-#move-top {
-  position: fixed;
-  right: 50px;
-  bottom: 30px;
-  background: var(--secondary-background);
-  width: 50px;
-  height: 50px;
-  color: var(--text);
-  z-index: 99;
-  border-radius: 50%;
-  font-size: 18px;
-  transition: 300ms all;
-  pointer-events: none;
-  opacity: 0;
 
-  -webkit-box-shadow: 0px 0px 8px 0px rgba(0,0,0,0.25);
-  -moz-box-shadow: 0px 0px 8px 0px rgba(0,0,0,0.25);
-  box-shadow: 0px 0px 8px 0px rgba(0,0,0,0.25);
-}
-
-#move-top.active {
-  bottom: 50px;
-  opacity: 1;
-  pointer-events: auto;
-}
-
-#move-top:hover {
-  transform: scale(1.2);
-}
 
 #see-all-repos {
   background: transparent;
   border: 1px solid var(--primary);
-  color: white;
+  color: var(--text);
   font-weight: normal;
   font-size: 18px;
   transition: 300ms all;
@@ -385,7 +340,7 @@ p {
 }
 
 #submit.disabled {
-  opacity: 0.5;
+  opacity: 0.3;
   cursor: not-allowed;
 }
 
