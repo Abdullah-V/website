@@ -1,5 +1,4 @@
 html {
-  /* #2563EB */
   --primary: #106EE3;
   --secondary: #034AA1;
 }
@@ -12,7 +11,7 @@ html.dark-mode {
 
 html.light-mode {
   --primary-background: #ffffff;
-  --secondary-background: #f3f4f6;
+  --secondary-background: #efefef;
   --text: black;
 }
 

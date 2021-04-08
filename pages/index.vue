@@ -3,7 +3,7 @@
 
     <button @click="moveTop()" id="move-top"><i class="fas fa-arrow-up"></i></button>
 
-    <div class="section1">
+    <div id="section1">
       <div class="container1">
         <div class="image-container">
           <img src="https://pbs.twimg.com/profile_images/1362314692962746369/Fd6wHhPx_400x400.jpg" alt="photo">
@@ -39,9 +39,11 @@
       </div>
     </div>
 
-      <!--  TODO: Add scroll down animation -->
+      <!--  TODO: Add scroll down animation (maybe) -->
 
-    <div class="projects-section">
+
+
+    <div id="projects-section">
       <h1 class="section-title">Projects</h1>
 
       <div class="projects-container">
@@ -50,7 +52,7 @@
 
     </div>
 
-    <div class="skills-section">
+    <div id="skills-section">
       <h1 class="section-title">Languages & frameworks & tools</h1>
 
       <div class="skills-container">
@@ -59,12 +61,15 @@
 
     </div>
 
-    <div v-if="repos.length" class="repos-section">
-      <h1 class="section-title">Github repositories</h1>
+    <div style="display: flex;flex-direction: column;align-items: center" v-if="repos.length" id="repos-section">
+      <h1 style="margin-bottom: 50px" class="section-title">Github repositories</h1>
 
       <div class="repos-container">
-        <Repo v-for="repo in repos" :repo-data="repo" :key="repo.id" />
+        <Repo v-for="repo in repos.slice(0,6)" :repo-data="repo" :key="repo.id" />
       </div>
+
+      <nuxt-link to="/repos" tag="button" id="see-all-repos">See all repositories</nuxt-link>
+
     </div>
 
   </div>
@@ -136,7 +141,7 @@ export default {
   height: 100%;
 }
 
-.section1 {
+#section1 {
   width: 100%;
   display: flex;
   justify-content: space-evenly;
@@ -145,7 +150,7 @@ export default {
   margin-top: 20px;
 }
 
-.section1 .container1 {
+#section1 .container1 {
   width: 380px;
   height: 540px;
   display: flex;
@@ -155,7 +160,7 @@ export default {
   padding: 0 10px;
 }
 
-.section1 .container1 i {
+#section1 .container1 i {
   color: var(--primary);
   font-size: 18px;
 }
@@ -196,7 +201,7 @@ p {
   transform: scale(1.08);
 }
 
-.section1 .container2 {
+#section1 .container2 {
   width: 550px;
   height: 400px;
   display: flex;
@@ -228,15 +233,8 @@ p {
   transform: scale(1.08);
 }
 
-.projects-section {
+#projects-section {
   margin: 40px 0;
-}
-
-.projects-container {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-evenly;
 }
 
 .section-title {
@@ -246,11 +244,17 @@ p {
 }
 
 .skills-container,
+.projects-container,
 .repos-container {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-evenly;
+}
+
+.repos-container {
+  width: 90%;
+  margin: auto;
 }
 
 #move-top {
@@ -281,6 +285,23 @@ p {
 
 #move-top:hover {
   transform: scale(1.2);
+}
+
+#see-all-repos {
+  background: transparent;
+  border: 1px solid var(--primary);
+  color: white;
+  font-weight: normal;
+  font-size: 18px;
+  transition: 300ms all;
+  padding: 14px 40px;
+  border-radius: 3px;
+  margin: 30px 0 40px 0;
+}
+
+#see-all-repos:hover {
+  background: var(--primary);
+  color: white;
 }
 
 </style>
