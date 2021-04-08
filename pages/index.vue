@@ -72,6 +72,22 @@
 
     </div>
 
+    <div id="contact-section">
+      <h1 class="section-title">Contact with me</h1>
+
+      <div id="contact-container">
+        <img :src="require('~/assets/images/mail.svg')" alt="mail.svg">
+        <div id="contact-form">
+          <input @keyup="validateForm()" v-model="contactInfos.name" type="text" placeholder="Your name">
+          <input @keyup="validateForm()" v-model="contactInfos.email" type="email" placeholder="Your email">
+          <input @keyup="validateForm()" v-model="contactInfos.subject" type="text" placeholder="Subject">
+          <textarea @keyup="validateForm()" v-model="contactInfos.message" placeholder="Message"></textarea>
+          <button :class="{disabled: !isValidForm,enabled: isValidForm}" id="submit"><i style="margin-right: 15px" class="fas fa-paper-plane"></i>Submit</button>
+        </div>
+      </div>
+
+    </div>
+
   </div>
 </template>
 
@@ -119,6 +135,13 @@ export default {
       repos: [],
       skills: someData.skills,
       projects: someData.projects,
+      isValidForm: false,
+      contactInfos: {
+        name: "",
+        email: "",
+        subject: "",
+        message: ""
+      },
     }
   },
   methods: {
@@ -130,7 +153,11 @@ export default {
           behavior: "smooth"
         })
       }
-    }
+    },
+    validateForm() {
+      const emailRegex = /[A-Z0-9._%+-]+@[A-Z0-9-]+.+.[A-Z]{2,4}/igm
+      this.isValidForm = !!(this.contactInfos.name && emailRegex.test(this.contactInfos.email) && this.contactInfos.subject && this.contactInfos.message);
+    },
   }
 }
 </script>
@@ -302,6 +329,72 @@ p {
 #see-all-repos:hover {
   background: var(--primary);
   color: white;
+}
+
+#contact-container {
+  display: flex;
+  justify-content: space-around;
+  align-content: center;
+  width: 100%;
+  height: 580px;
+}
+
+#contact-container img,
+#contact-form {
+  width: 45%;
+  height: 90%;
+}
+
+#contact-form {
+  padding: 10px 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+
+  -webkit-box-shadow: 0px 0px 18px 0px rgba(0,0,0,0.4);
+  -moz-box-shadow: 0px 0px 18px 0px rgba(0,0,0,0.4);
+  box-shadow: 0px 0px 18px 0px rgba(0,0,0,0.4);
+}
+
+#contact-form input,
+#contact-form textarea {
+  width: 100%;
+  height: 10%;
+  padding: 15px 20px;
+  font-size: 18px;
+  background: var(--secondary-background);
+  color: var(--text);
+  border-radius: 3px;
+}
+
+#contact-form textarea {
+  height: 25%;
+  resize: none;
+}
+
+#submit {
+  background: var(--primary);
+  color: white;
+  font-weight: normal;
+  font-size: 18px;
+  transition: 300ms all;
+  border-radius: 3px;
+  width: 60%;
+  height: 10%;
+}
+
+#submit.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+#submit.enabled {
+  cursor: pointer;
+}
+
+#submit.enabled:hover {
+  background: var(--secondary);
 }
 
 </style>
