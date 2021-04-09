@@ -1,5 +1,6 @@
 <template>
   <div>
+    <Navbar />
     <Nuxt />
     <button @click="moveTop()" id="move-top"><i class="fas fa-arrow-up"></i></button>
     <div id="footer">
@@ -12,6 +13,7 @@
 </template>
 
 <script>
+import Navbar from "~/components/Navbar";
 
 export default {
   created() {
@@ -46,6 +48,9 @@ export default {
         })
       }
     },
+  },
+  components: {
+    Navbar
   }
 }
 
@@ -92,6 +97,13 @@ export default {
   justify-content: space-around;
   color: gray;
   font-size: 20px;
+}
+
+@media only screen and (max-width: 820px) {
+  #footer {
+    flex-direction: column;
+    height: 250px;
+  }
 }
 
 a {

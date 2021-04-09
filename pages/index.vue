@@ -13,7 +13,7 @@
         <span><i style="margin-right: 3px" class="far fa-calendar-alt"></i> 26.01.2005</span>
         <span><i style="margin-right: 3px" class="fas fa-building"></i>I am currently not working for any company.</span>
         <span> <i class="fas fa-info-circle"></i> I am currently eligible to work as a fullstack, frontend or backend developer for office, remote or freelance jobs. </span>
-        <button class="primary-button resume-button">See resume</button>
+        <a target="_blank" href="https://www.dropbox.com/s/cb8c0vu6pw8r514/CV.pdf?dl=0"><button class="primary-button resume-button">See resume</button></a>
       </div>
 
       <div class="container2">
@@ -99,11 +99,6 @@ import someData from '~/static/someData.json'
 
 export default {
   created() {
-
-
-
-    this.$colorMode.preference = 'dark'
-
     this.$axios.$get('https://api.github.com/users/Abdullah-V/repos')
       .then(async (result) => {
         result = await result.sort(function(a, b){
@@ -139,7 +134,7 @@ export default {
     },
     send() {
       // sendEmail()
-      console.log("send")
+      // console.log("send")
     }
   }
 }
@@ -253,6 +248,15 @@ p {
   font-size: 35px;
 }
 
+.section-title:before {
+  display: block;
+  content: " ";
+  margin-top: -130px;
+  height: 130px;
+  visibility: hidden;
+  pointer-events: none;
+}
+
 .skills-container,
 .projects-container,
 .repos-container {
@@ -289,7 +293,7 @@ p {
 #contact-container {
   display: flex;
   justify-content: space-around;
-  align-content: center;
+  align-items: center;
   width: 100%;
   height: 580px;
 }
@@ -350,6 +354,18 @@ p {
 
 #submit.enabled:hover {
   background: var(--secondary);
+}
+
+@media only screen and (max-width: 850px) {
+  #contact-container {
+    height: 1080px;
+    flex-direction: column;
+  }
+  #contact-container img,
+  #contact-form {
+    width: 80%;
+    height: 45%;
+  }
 }
 
 </style>
