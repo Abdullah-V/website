@@ -133,8 +133,14 @@ export default {
       this.isValidForm = !!(this.contactInfos.name && emailRegex.test(this.contactInfos.email) && this.contactInfos.subject && this.contactInfos.message);
     },
     send() {
-      // sendEmail()
-      // console.log("send")
+      var contactInfos = this.contactInfos
+      this.$axios.$post("/api/sendMail",{
+        contactInfos
+      })
+      .then(result => {
+        console.log(result)
+        //  TODO: disable button,loader on button,clear inputs
+      })
     }
   }
 }
