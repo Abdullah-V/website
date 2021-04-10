@@ -141,7 +141,7 @@
       "name": "Personal website",
       "description": "My personal website(this site)",
       "sourceCodeLink": "https://github.com/Abdullah-V/website",
-      "liveDemoLink": "http://localhost:3000",
+      "liveDemoLink": "https://dotslashroot.herokuapp.com",
       "imageFileName": "website.png",
       "techStack": [
         {

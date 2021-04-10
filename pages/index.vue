@@ -23,7 +23,7 @@
            in 2005. I started my school life
           in 2011. I am studying in 10th grade. I
           started to be interested in programming in
-          March 2020.My motivation to start
+          April 2020.My motivation to start
           programming was to be beneficial to people
           by doing my dream projects, which is the
           motivation for me to continue programming.
@@ -81,11 +81,14 @@
           <input @keyup="validateForm()" v-model="contactInfos.email" type="email" placeholder="Your email">
           <input @keyup="validateForm()" v-model="contactInfos.subject" type="text" placeholder="Subject">
           <textarea @keyup="validateForm()" v-model="contactInfos.message" placeholder="Message"></textarea>
-          <button :disabled="!isValidForm" @click="send()" :class="{disabled: !isValidForm,enabled: isValidForm}" id="submit"><i style="margin-right: 15px" class="fas fa-paper-plane"></i>Submit</button>
+          <button :disabled="!isValidForm" @click="send()" :class="{disabled: !isValidForm || isSending,enabled: isValidForm}" id="submit"> <span v-if="isSending" class="lds-dual-ring"></span>
+            <i v-if="!isSending" style="margin-right: 15px" class="fas fa-paper-plane"></i>Submit</button>
         </div>
       </div>
 
     </div>
+
+    <notifications class="my-notification" width="30%" group="foo" />
 
   </div>
 </template>
@@ -119,6 +122,7 @@ export default {
       skills: someData.skills,
       projects: someData.projects,
       isValidForm: false,
+      isSending: false,
       contactInfos: {
         name: "",
         email: "",
@@ -128,18 +132,31 @@ export default {
     }
   },
   methods: {
+    doNotification(){
+      this.$notify({
+        title: 'Message sent',
+        text: 'Your message sent successfully.I reply you via email in soon',
+        speed: 500,
+        duration: 4000,
+        group: 'foo',
+      });
+    },
     validateForm() {
       const emailRegex = /[A-Z0-9._%+-]+@[A-Z0-9-]+.+.[A-Z]{2,4}/igm
       this.isValidForm = !!(this.contactInfos.name && emailRegex.test(this.contactInfos.email) && this.contactInfos.subject && this.contactInfos.message);
     },
     send() {
+      this.isSending = true
       var contactInfos = this.contactInfos
       this.$axios.$post("/api/sendMail",{
         contactInfos
       })
       .then(result => {
-        console.log(result)
-        //  TODO: disable button,loader on button,clear inputs
+        this.isSending = false
+        this.doNotification()
+        this.contactInfos.subject = ""
+        this.contactInfos.message = ""
+        this.isValidForm = false
       })
     }
   }
@@ -347,6 +364,9 @@ p {
   border-radius: 3px;
   width: 60%;
   height: 10%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 #submit.disabled {
@@ -362,6 +382,45 @@ p {
   background: var(--secondary);
 }
 
+
+
+
+
+
+.lds-dual-ring {
+  display: inline-block;
+  height: 100%;
+  margin-right: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.lds-dual-ring:after {
+  content: " ";
+  display: block;
+  width: 30px;
+  height: 30px;
+  margin: 0;
+  border-radius: 50%;
+  border: 4px solid #fff;
+  border-color: #fff transparent #fff transparent;
+  animation: lds-dual-ring 1.2s linear infinite;
+}
+@keyframes lds-dual-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+
+
+
+
+
+
 @media only screen and (max-width: 850px) {
   #contact-container {
     height: 1080px;
@@ -372,6 +431,11 @@ p {
     width: 80%;
     height: 45%;
   }
+}
+
+
+.my-notification {
+  cursor: pointer;
 }
 
 </style>

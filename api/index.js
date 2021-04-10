@@ -17,8 +17,8 @@ function sendEmail(infos) {
   });
 
   var mailOptions = {
-    from: 'abdullahveliyev2005@gmail.com',
-    to: 'abdullahveliyev2005@gmail.com',
+    from: process.env.EMAIL,
+    to: process.env.EMAIL,
     subject: `${infos.name} from your website: ${infos.subject}`,
     text: `${infos.message}\n\n\n\n\nEmail of ${infos.name}: ${infos.email}`
   };

@@ -28,6 +28,10 @@ export default {
       src: "~/plugins/aos",
       ssr: false
     },
+    {
+      src: "~/plugins/vue-notification",
+      ssr: false
+    },
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
