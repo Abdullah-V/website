@@ -18,7 +18,7 @@
 
         <span @click="$colorMode.preference = 'dark'" v-if="$colorMode.preference === 'light'" class="mode-switcher"><i class="fas fa-moon"></i> </span>
 
-        <span @click="$colorMode.preference = 'light'" v-if="$colorMode.preference === 'dark' || $colorMode.preference === 'system'" class="mode-switcher"><i class="fas fa-sun"></i></span>
+        <span @click="$colorMode.preference = 'light'" v-if="$colorMode.preference === 'dark'" class="mode-switcher"><i class="fas fa-sun"></i></span>
 
       </div>
 
@@ -38,10 +38,14 @@
         <button @click="routeToSection('/#contact-section')" class="narrow-menu-link">Contact</button>
       </div>
 
-      <button @click="$colorMode.preference = 'light'" style="font-size: 24px" v-if="$colorMode.preference === 'dark' || $colorMode.preference === 'system'" class="narrow-menu-link"><i class="fas fa-sun"></i></button>
+      <button @click="$colorMode.preference = 'light'" style="font-size: 24px" v-if="$colorMode.preference === 'dark'" class="narrow-menu-link"><i class="fas fa-sun"></i></button>
       <button @click="$colorMode.preference = 'dark'" style="font-size: 24px" v-if="$colorMode.preference === 'light'" class="narrow-menu-link"><i class="fas fa-moon"></i></button>
 
     </div>
+
+    <span v-if="$colorMode.preference === 'system'">
+          {{ $colorMode.preference = 'dark' }}
+    </span>
 
   </div>
 </template>
