@@ -43,7 +43,7 @@
 
     </div>
 
-    <span v-if="$colorMode.preference === 'system'">
+    <span style="display: none" v-if="$colorMode.preference === 'system'">
           {{ $colorMode.preference = 'dark' }}
     </span>
 
