@@ -98,10 +98,23 @@ import Project from "~/components/Project";
 import Skill from "~/components/Skill";
 import Repo from "~/components/Repo";
 import someData from '~/static/someData.json'
-// import sendEmail from "~/static/sendEmail";
 
 export default {
   created() {
+
+    // if(this.$colorMode.preference === 'system') {
+    //   this.$colorMode.preference = "dark"
+    // }
+
+    // if(process.client) {
+    //   // if(localStorage.getItem('isVisited') !== true) {
+    //   //   this.$colorMode.preference = "dark"
+    //   //   localStorage.setItem('isVisited',true)
+    //   // }
+    //   localStorage.setItem('nuxt-color-mode','light')
+    //   this.$colorMode.preference = 'light'
+    // }
+
     this.$axios.$get('https://api.github.com/users/Abdullah-V/repos')
       .then(async (result) => {
         result = await result.sort(function(a, b){

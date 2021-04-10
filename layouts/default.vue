@@ -17,6 +17,8 @@ import Navbar from "~/components/Navbar";
 
 export default {
   created() {
+
+
     if(process.client) {
       window.addEventListener("scroll",() => {
         var sh = window.pageYOffset // scroll height
