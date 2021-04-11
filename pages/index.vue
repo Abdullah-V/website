@@ -161,7 +161,7 @@ export default {
     send() {
       this.isSending = true
       var contactInfos = this.contactInfos
-      this.$axios.$post("/api/sendMail",{
+      this.$axios.$post(`${process.env.BASE}/api/sendMail`,{
         contactInfos
       })
       .then(result => {
