@@ -78,8 +78,15 @@ export default {
   // PWA module configuration: https://go.nuxtjs.dev/pwa
   pwa: {
     manifest: {
-      lang: 'en'
-    }
+      lang: 'en',
+      name: 'Website',
+      short_name: 'Website',
+      description: "Personal website of Abdullah V.",
+      theme_color: "#106EE3",
+    },
+    meta: {
+      author: 'Abdullah Veliyev',
+    },
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
