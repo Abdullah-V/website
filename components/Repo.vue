@@ -1,9 +1,11 @@
 <template>
   <div
     id="repo-root"
-    v-if="repoData.fork === false"
+    v-if="!repoData.fork"
+    data-aos="zoom-in"
+    data-aos-duration="600"
   >
-    <span id="repo-header"><a target="_blank" :href="repoData.html_url" id="repo-name">{{ repoData.name }}</a> <span id="repo-infos">{{ repoData.stargazers_count }} <i class="fas fa-star"></i> <img v-if="repoData.language" :src="require(`~/assets/icons/${repoData.language.toLowerCase().replace('vue','vuejs')}.svg`)" alt=""> </span> </span>
+    <span id="repo-header"><a target="_blank" :href="repoData.html_url || 'https://github.com/Abdullah-V/' + repoData.repo" id="repo-name">{{ repoData.name || repoData.repo }}</a> <span id="repo-infos">{{ repoData.stargazers_count || repoData.stars }} <i class="fas fa-star"></i> <img v-if="repoData.language" :src="require(`~/assets/icons/${repoData.language.toLowerCase().replace('vue','vuejs')}.svg`)" alt=""> </span> </span>
     <span id="repo-description">{{ repoData.description }}</span>
   </div>
 </template>

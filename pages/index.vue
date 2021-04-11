@@ -18,7 +18,7 @@
 
       <div class="container2">
         <h1>Little about me</h1>
-        <p>
+        <p style="text-align: center">
           My name is Abdullah. I was born in Azerbaijan, Baku
            in 2005. I started my school life
           in 2011. I am studying in 10th grade. I
@@ -60,11 +60,11 @@
 
     </div>
 
-    <div style="display: flex;flex-direction: column;align-items: center" v-if="repos.length" id="repos-section">
-      <h1 style="margin-bottom: 50px" class="section-title">Github repositories</h1>
+    <div style="display: flex;flex-direction: column;align-items: center" v-if="$store.state.pinnedRepos.length" id="repos-section">
+      <h1 style="margin-bottom: 50px" class="section-title">Pinned Github repositories</h1>
 
       <div class="repos-container">
-        <Repo v-for="repo in repos.slice(0,6)" :repo-data="repo" :key="repo.id" />
+        <Repo v-for="repo in $store.state.pinnedRepos" :repo-data="repo" :key="repo.id" />
       </div>
 
       <nuxt-link to="/repos" tag="button" id="see-all-repos">See all repositories <i style="margin-left: 10px" class="far fa-arrow-alt-circle-right"></i> </nuxt-link>
@@ -100,30 +100,6 @@ import Repo from "~/components/Repo";
 import someData from '~/static/someData.json'
 
 export default {
-  created() {
-
-    // if(this.$colorMode.preference === 'system') {
-    //   this.$colorMode.preference = "dark"
-    // }
-
-    // if(process.client) {
-    //   // if(localStorage.getItem('isVisited') !== true) {
-    //   //   this.$colorMode.preference = "dark"
-    //   //   localStorage.setItem('isVisited',true)
-    //   // }
-    //   localStorage.setItem('nuxt-color-mode','light')
-    //   this.$colorMode.preference = 'light'
-    // }
-
-    this.$axios.$get('https://api.github.com/users/Abdullah-V/repos')
-      .then(async (result) => {
-        result = await result.sort(function(a, b){
-          return b.stargazers_count - a.stargazers_count;
-        })
-        this.repos = await result
-      })
-
-  },
   components: {
     Project,
     Skill,
@@ -131,7 +107,6 @@ export default {
   },
   data() {
     return {
-      repos: [],
       skills: someData.skills,
       projects: someData.projects,
       isValidForm: false,

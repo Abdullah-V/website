@@ -18,6 +18,7 @@ import Navbar from "~/components/Navbar";
 export default {
   created() {
 
+    this.getRepos()
 
     if(process.client) {
       window.addEventListener("scroll",() => {
@@ -49,6 +50,25 @@ export default {
           behavior: "smooth"
         })
       }
+    },
+    getRepos() {
+
+      this.$axios.$get('https://api.github.com/users/Abdullah-V/repos')
+        .then(async (result) => {
+          result = await result.sort(function(a, b){
+            return b.stargazers_count - a.stargazers_count;
+          })
+          this.$store.state.allRepos = await result
+        })
+
+      this.$axios.$get('https://gh-pinned-repos.vercel.app/?username=Abdullah-V')
+        .then(async (result) => {
+          result = await result.sort(function(a, b){
+            return b.stars - a.stars;
+          })
+          this.$store.state.pinnedRepos = await result
+        })
+
     },
   },
   components: {
