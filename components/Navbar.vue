@@ -47,6 +47,8 @@
           {{ $colorMode.preference = 'dark' }}
     </span>
 
+    <!-- <button @click="log()">Click</button> -->
+
   </div>
 </template>
 
@@ -62,7 +64,10 @@ export default {
     routeToSection(sectionHash) {
       this.$router.push({path: sectionHash})
       this.isMenu = false
-    }
+    },
+    // log() {
+    //   console.log("Heeey!")
+    // }
   }
 }
 </script>

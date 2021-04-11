@@ -1,6 +1,5 @@
-const HOST = "http://localhost:3000"
-
 export default {
+
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     title: '. /Abdullah',
@@ -52,17 +51,18 @@ export default {
   ],
 
   sitemap: {
-    hostname: 'http://localhost:3000',
+    hostname: process.env.BASE,
     gzip: true,
   },
 
   robots: {
-    Sitemap: `${HOST}/sitemap.xml`
+    Sitemap: `${process.env.BASE}/sitemap.xml`
   },
 
   env: {
     EMAIL: process.env.EMAIL,
     EMAIL_PASSWORD: process.env.EMAIL_PASSWORD,
+    BASE: process.env.BASE
   },
 
   // PWA module configuration: https://go.nuxtjs.dev/pwa
@@ -73,8 +73,11 @@ export default {
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
-  build: {
-  },
+  // build: {
+  //   filenames: {
+  //     chunk: ({ isDev }) => isDev ? '[name].js' : '[chunkhash].js'
+  //   }
+  // },
 
   serverMiddleware: {
     '/api': '~/api'
