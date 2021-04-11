@@ -4,11 +4,7 @@
     <div id="large-devices">
       <nuxt-link style="cursor:pointer;" to="/" tag="h1">. / Abdullah</nuxt-link>
       <div class="links">
-        <!--      <a class="link" href="/#top">Home</a>-->
-        <!--      <a class="link" href="/#projects-section">Projects</a>-->
-        <!--      <a class="link" href="/#skills-section">Skills</a>-->
-        <!--      <a class="link" href="/#repos-section">Repositories</a>-->
-        <!--      <a class="link" href="/#contact-section">Contact</a>-->
+       
 
         <nuxt-link class="link" to="/#top">Home</nuxt-link>
         <nuxt-link class="link" to="/#projects-section">Projects</nuxt-link>
@@ -16,9 +12,11 @@
         <nuxt-link class="link" to="/#repos-section">Repositories</nuxt-link>
         <nuxt-link class="link" to="/#contact-section">Contact</nuxt-link>
 
-        <span @click="$colorMode.preference = 'dark'" v-if="$colorMode.preference === 'light'" class="mode-switcher"><i class="fas fa-moon"></i> </span>
+        <!-- <button @click="$colorMode.preference = 'dark'" class="mode-switcher"><i class="fas fa-moon"></i> </button>
 
-        <span @click="$colorMode.preference = 'light'" v-if="$colorMode.preference === 'dark'" class="mode-switcher"><i class="fas fa-sun"></i></span>
+        <button @click="$colorMode.preference = 'light'" class="mode-switcher"><i class="fas fa-sun"></i></button> -->
+
+        <button @click="$colorMode.preference = $colorMode.preference ==='light' ? 'dark' : 'light'" class="mode-switcher"><i class="fas fa-adjust"></i></button>
 
       </div>
 
@@ -118,12 +116,12 @@ export default {
 
 .mode-switcher {
   margin: 0 10px;
-  /*width: 60px;*/
-  /*height: 60px;*/
-  padding: 10px 12px;
+  width: 40px;
+  height: 40px;
   border-radius: 20px;
   background: var(--secondary-background);
   cursor: pointer;
+  color: var(--text);
 }
 
 .hamburger-icon {
@@ -178,7 +176,7 @@ export default {
   font-size: 18px;
 }
 
-@media only screen and (max-width: 870px){
+@media only screen and (max-width: 900px){
   .links {
     display: none;
   }
