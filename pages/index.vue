@@ -5,7 +5,7 @@
     <div id="section1">
       <div class="container1">
         <div class="image-container">
-          <img src="https://pbs.twimg.com/profile_images/1362314692962746369/Fd6wHhPx_400x400.jpg" alt="photo">
+          <img :src="require('~/assets/images/pp.jpg')" alt="profile photo">
         </div>
         <h1>Abdullah Veliyev</h1>
         <p>Fullstack web developer</p>
@@ -131,10 +131,11 @@ export default {
     },
     validateForm() {
       const emailRegex = /[A-Z0-9._%+-]+@[A-Z0-9-]+.+.[A-Z]{2,4}/igm
-      this.isValidForm = !!(this.contactInfos.name && emailRegex.test(this.contactInfos.email) && this.contactInfos.subject && this.contactInfos.message);
+      this.isValidForm = !!(this.contactInfos.name.trim() && emailRegex.test(this.contactInfos.email.trim()) && this.contactInfos.subject.trim() && this.contactInfos.message.trim());
     },
     send() {
       this.isSending = true
+      this.isValidForm = false
       var contactInfos = this.contactInfos
       this.$axios.$post(`${process.env.BASE}/api/sendMail`,{
         contactInfos
@@ -142,9 +143,10 @@ export default {
       .then(result => {
         this.isSending = false
         this.doNotification()
+        this.contactInfos.name = this.contactInfos.name.trim()
+        this.contactInfos.email = this.contactInfos.email.trim()
         this.contactInfos.subject = ""
         this.contactInfos.message = ""
-        this.isValidForm = false
       })
     }
   }

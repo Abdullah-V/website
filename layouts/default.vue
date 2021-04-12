@@ -21,6 +21,11 @@ export default {
     this.getRepos()
 
     if(process.client) {
+
+      if(window.location.href.startsWith('http://') && !window.location.href.startsWith('http://localhost')) {
+        window.location.href = window.location.href.replace('http://','https://')
+      }
+
       window.addEventListener("scroll",() => {
         var sh = window.pageYOffset // scroll height
         var btn = this.$el.querySelector("#move-top")

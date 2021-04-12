@@ -65,7 +65,7 @@
   "projects": [
     {
       "name": "Cargoglobal",
-      "description": "Cargoglobal is a sitefor share logistic adversiments",
+      "description": "Cargoglobal is a site for share logistic adversiments",
       "sourceCodeLink": "https://github.com/Abdullah-V/cargoglobal-frontend",
       "liveDemoLink": "https://cargoglobal.herokuapp.com",
       "imageFileName": "cargoglobal.png",

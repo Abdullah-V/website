@@ -19,8 +19,8 @@ function sendEmail(infos) {
   var mailOptions = {
     from: process.env.EMAIL,
     to: process.env.EMAIL,
-    subject: `${infos.name} from your website: ${infos.subject}`,
-    text: `${infos.message}\n\n\n\n\nEmail of ${infos.name}: ${infos.email}`
+    subject: `${infos.name.trim()} from your website: ${infos.subject.trim()}`,
+    text: `${infos.message.trim()}\n\n\n\n\nEmail of ${infos.name.trim()}: ${infos.email.trim()}`
   };
 
   transporter.sendMail(mailOptions, function(error, info){
@@ -34,7 +34,10 @@ function sendEmail(infos) {
 
 
 app.post("/sendMail",async (req,res) => {
-  await sendEmail(req.body.contactInfos)
+  var contactInfos = await req.body.contactInfos
+  if(contactInfos.name.trim() && contactInfos.email.trim() && contactInfos.subject.trim() && contactInfos.message.trim()) {
+    await sendEmail(contactInfos)
+  }
   res.send(true)
 })
 
