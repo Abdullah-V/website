@@ -51,6 +51,7 @@ body,
   scroll-behavior: smooth;
   text-decoration: none;
   border: 0;
+  transition: 400ms background;
 }
 
 html body #__nuxt #__layout>div {
