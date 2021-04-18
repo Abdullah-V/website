@@ -10,20 +10,21 @@
         <h1>Abdullah Veliyev</h1>
         <p>Fullstack web developer</p>
         <span><i style="margin-right: 3px" class="fas fa-map-marker-alt"></i> Azerbaijan - Baku</span>
+        <span><i style="margin-right: 3px" class="fas fa-school"></i> High school in XDTG</span>
         <span><i style="margin-right: 3px" class="far fa-calendar-alt"></i> 26.01.2005</span>
-        <span><i style="margin-right: 3px" class="fas fa-building"></i>I am currently not working for any company.</span>
+        <span><i style="margin-right: 3px" class="fas fa-building"></i> I am currently not working for any company.</span>
         <span> <i class="fas fa-info-circle"></i> I am currently eligible to work as a fullstack, frontend or backend developer for office, remote or freelance jobs. </span>
-        <a target="_blank" href="https://www.dropbox.com/s/cb8c0vu6pw8r514/CV.pdf?dl=0"><button class="primary-button resume-button">See resume</button></a>
+        <a target="_blank" href="https://github.com/Abdullah-V/media/blob/master/CV.pdf"><button class="primary-button resume-button">See resume</button></a>
       </div>
 
       <div class="container2">
         <h1>Little about me</h1>
         <p style="text-align: center">
           My name is Abdullah. I was born in Azerbaijan, Baku
-           in 2005. I started my school life
+          in 2005. I started my school life
           in 2011. I am studying in 10th grade. I
           started to be interested in programming in
-          April 2020.My motivation to start
+          April 2020. My motivation to start
           programming was to be beneficial to people
           by doing my dream projects, which is the
           motivation for me to continue programming.
@@ -37,9 +38,6 @@
         </div>
       </div>
     </div>
-
-      <!--  TODO: Add scroll down animation (maybe) -->
-
 
 
     <div id="projects-section">

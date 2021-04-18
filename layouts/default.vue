@@ -68,9 +68,6 @@ export default {
 
       this.$axios.$get('https://gh-pinned-repos.vercel.app/?username=Abdullah-V')
         .then(async (result) => {
-          result = await result.sort(function(a, b){
-            return b.stars - a.stars;
-          })
           this.$store.state.pinnedRepos = await result
         })
 

@@ -139,7 +139,7 @@
     },
     {
       "name": "Personal website",
-      "description": "My personal website(this site)",
+      "description": "My personal website (this site)",
       "sourceCodeLink": "https://github.com/Abdullah-V/website",
       "imageFileName": "website.png",
       "techStack": [
