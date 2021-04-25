@@ -4,11 +4,11 @@
     data-aos="zoom-in"
     data-aos-duration="600"
   >
-    <img v-if="projectData.imageFileName" id="project-image" :src="require(`~/assets/images/${projectData.imageFileName}`)" alt="image from project">
+    <img v-if="projectData.imageURL" id="project-image" :src="projectData.imageURL" alt="image from project">
     <h2 id="project-title">{{ projectData.name }}</h2>
     <h4 id="project-description">{{ projectData.description }}</h4>
     <div class="tech-stack">
-      <img :title="item.name" v-for="item in projectData.techStack" class="icon" :src="require(`~/assets/icons/${item.iconFileName}`)" alt="icon">
+      <img :title="item.name" :key="item.name" v-for="item in projectData.techStack" class="icon" :src="require(`~/assets/icons/${item.iconFileName}`)" alt="icon">
     </div>
     <div id="project-action-buttons">
       <button v-if="projectData.liveDemoLink" @click="openLink(projectData.liveDemoLink)" id="live">Live demo</button>
