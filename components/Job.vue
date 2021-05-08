@@ -1,6 +1,6 @@
 <template>
   <div id="job-root">
-    <img :src="require(`~/assets/images/${job.imageName}`)" alt="">
+    <img :src="require(`~/assets/images/${job.imageName}`)" :alt="job.name">
 
     <div id="job-infos">
       <a v-if="job.link" target="_blank" :href="job.link"><h1>{{ job.name }}</h1></a>
@@ -24,7 +24,7 @@ export default {
 <style scoped>
 
 #job-root {
-  width: 600px;
+  width: 45%;
   height: 180px;
   background: var(--secondary-background);
   border-radius: 5px;
@@ -70,4 +70,21 @@ a {
   color: white;
 }
 
+@media only screen and (max-width: 1125px) {
+  #job-root {
+    width: 60%;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  #job-root {
+    width: 80%;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  #job-root {
+    width: 96%;
+  }
+}
 </style>
