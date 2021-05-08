@@ -80,11 +80,23 @@ a {
   #job-root {
     width: 80%;
   }
+  h1 {
+    font-size: 26px;
+  }
+  .info-with-icon {
+    font-size: 18px;
+  }
 }
 
 @media only screen and (max-width: 480px) {
   #job-root {
     width: 96%;
+  }
+  h1 {
+    font-size: 24px;
+  }
+  .info-with-icon {
+    font-size: 16px;
   }
 }
 </style>
