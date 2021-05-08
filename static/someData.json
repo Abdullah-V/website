@@ -244,5 +244,14 @@
         }
       ]
     }
+  ],
+  "jobs": [
+    {
+      "name": "Freelance",
+      "position": "Frontend developer",
+      "location": "Remote",
+      "interval": "07.05.2021 - Current",
+      "imageName": "freelance.svg"
+    }
   ]
 }

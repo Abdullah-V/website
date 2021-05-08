@@ -4,7 +4,7 @@
     <div id="large-devices">
       <nuxt-link style="cursor:pointer;" to="/" tag="h1">. / Abdullah</nuxt-link>
       <div class="links">
-       
+
 
         <nuxt-link class="link" to="/#top">Home</nuxt-link>
         <nuxt-link class="link" to="/#projects-section">Projects</nuxt-link>
@@ -12,11 +12,11 @@
         <nuxt-link class="link" to="/#repos-section">Repositories</nuxt-link>
         <nuxt-link class="link" to="/#contact-section">Contact</nuxt-link>
 
-        <!-- <button @click="$colorMode.preference = 'dark'" class="mode-switcher"><i class="fas fa-moon"></i> </button>
+        <button v-show="$colorMode.preference === 'light'" @click="$colorMode.preference = 'dark'" class="mode-switcher"><i class="fas fa-moon"></i> </button>
 
-        <button @click="$colorMode.preference = 'light'" class="mode-switcher"><i class="fas fa-sun"></i></button> -->
+        <button v-show="$colorMode.preference === 'dark'" @click="$colorMode.preference = 'light'" class="mode-switcher"><i class="fas fa-sun"></i></button>
 
-        <button @click="$colorMode.preference = $colorMode.preference ==='light' ? 'dark' : 'light'" class="mode-switcher"><i class="fas fa-adjust"></i></button>
+        <!-- <button @click="$colorMode.preference = $colorMode.preference ==='light' ? 'dark' : 'light'" class="mode-switcher"><i class="fas fa-adjust"></i></button> -->
 
       </div>
 

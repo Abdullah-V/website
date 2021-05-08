@@ -69,6 +69,15 @@
 
     </div>
 
+    <div id="jobs-section">
+      <h1 class="section-title">Job experience</h1>
+
+      <div class="jobs-container">
+        <Job v-for="job in jobs" :key="job.name" :job="job" />
+      </div>
+
+    </div>
+
     <div id="contact-section">
       <h1 class="section-title">Contact with me</h1>
 
@@ -95,18 +104,21 @@
 import Project from "~/components/Project";
 import Skill from "~/components/Skill";
 import Repo from "~/components/Repo";
-import someData from '~/static/someData.json'
+import Job from "~/components/Job";
+import someData from '~/static/someData.json';
 
 export default {
   components: {
     Project,
     Skill,
-    Repo
+    Repo,
+    Job
   },
   data() {
     return {
       skills: someData.skills,
       projects: someData.projects,
+      jobs: someData.jobs,
       isValidForm: false,
       isSending: false,
       contactInfos: {
@@ -370,6 +382,11 @@ p {
   background: var(--secondary);
 }
 
+.jobs-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
 
 
@@ -425,5 +442,18 @@ p {
 .my-notification {
   cursor: pointer;
 }
+
+
+
+/*
+{
+      "name": "Producter",
+      "position": "Frontend developer",
+      "location": "Remote",
+      "interval": "09.05.2021 - Current",
+      "imageName": "producter.png",
+      "link": "https://producter.co"
+},
+*/
 
 </style>
