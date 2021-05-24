@@ -247,8 +247,16 @@
   ],
   "jobs": [
     {
-      "name": "Freelance",
+      "name": "Producter",
       "position": "Frontend developer",
+      "link": "https://producter.co",
+      "location": "Remote",
+      "interval": "09.05.2021 - Current",
+      "imageName": "producter.png"
+    },
+    {
+      "name": "Freelance",
+      "position": "Software developer",
       "location": "Remote",
       "interval": "07.05.2021 - Current",
       "imageName": "freelance.svg"

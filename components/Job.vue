@@ -1,5 +1,5 @@
 <template>
-  <div id="job-root">
+  <div class="job-root">
     <img :src="require(`~/assets/images/${job.imageName}`)" :alt="job.name">
 
     <div id="job-infos">
@@ -23,7 +23,7 @@ export default {
 
 <style scoped>
 
-#job-root {
+.job-root {
   width: 45%;
   height: 180px;
   background: var(--secondary-background);
@@ -71,13 +71,13 @@ a {
 }
 
 @media only screen and (max-width: 1125px) {
-  #job-root {
+  .job-root {
     width: 60%;
   }
 }
 
 @media only screen and (max-width: 800px) {
-  #job-root {
+  .job-root {
     width: 80%;
   }
   h1 {
@@ -89,7 +89,7 @@ a {
 }
 
 @media only screen and (max-width: 480px) {
-  #job-root {
+  .job-root {
     width: 96%;
   }
   h1 {
