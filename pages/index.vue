@@ -12,7 +12,7 @@
         <span><i style="margin-right: 3px" class="fas fa-map-marker-alt"></i> Azerbaijan - Baku</span>
         <span><i style="margin-right: 3px" class="fas fa-school"></i> High school in XDTG</span>
         <span><i style="margin-right: 3px" class="far fa-calendar-alt"></i> 26.01.2005</span>
-        <span><i style="margin-right: 3px" class="fas fa-building"></i> <a style="color: white; letter-spacing: 1.5px" target="_blank" href="https://producter.co">Producter</a></span>
+        <span><i style="margin-right: 3px" class="fas fa-building"></i> <a :style="{color: 'var(--text)', letterSpacing: '1.5px'}" target="_blank" href="https://producter.co">Producter</a></span>
         <span> <i class="fas fa-info-circle"></i> I am currently eligible to work as a fullstack, frontend or backend developer for remote part-time, full-time and freelance jobs. </span>
         <a target="_blank" href="https://github.com/Abdullah-V/media/blob/master/CV.pdf"><button class="primary-button resume-button">See resume</button></a>
       </div>

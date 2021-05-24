@@ -67,7 +67,7 @@ img {
 }
 
 a {
-  color: white;
+  color: var(--text);
 }
 
 @media only screen and (max-width: 1125px) {
