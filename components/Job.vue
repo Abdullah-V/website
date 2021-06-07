@@ -1,11 +1,15 @@
 <template>
-  <div class="job-root">
+  <div
+    class="job-root"
+    data-aos="zoom-in"
+    data-aos-duration="600"
+  >
     <img :src="require(`~/assets/images/${job.imageName}`)" :alt="job.name">
 
-    <div id="job-infos">
+    <div class="job-infos">
       <a v-if="job.link" target="_blank" :href="job.link"><h1>{{ job.name }}</h1></a>
       <h1 v-else>{{ job.name }}</h1>
-      <div id="infos-with-icons">
+      <div class="infos-with-icons">
         <span class="info-with-icon"><i class="fas fa-user"></i> {{ job.position }}</span>
         <span class="info-with-icon"><i class="fas fa-map-marker-alt"></i> {{ job.location }}</span>
         <span class="info-with-icon"><i class="fas fa-clock"></i> {{ job.interval }}</span>
@@ -40,7 +44,7 @@ img {
   border-radius: 5px;
 }
 
-#job-infos {
+.job-infos {
   margin-left: 20px;
   height: 100%;
   display: flex;
@@ -48,7 +52,7 @@ img {
   justify-content: space-between;
 }
 
-#infos-with-icons {
+.infos-with-icons {
   height: 90%;
   display: flex;
   flex-direction: column;

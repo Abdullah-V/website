@@ -62,3 +62,49 @@ html body #__nuxt #__layout>div {
 button {
   cursor: pointer;
 }
+
+/* Scrollbar */
+
+/* Dark mode */
+
+.dark-mode::-webkit-scrollbar {
+  width: 10px;
+}
+
+.dark-mode::-webkit-scrollbar-track {
+  background: var(--secondary-background);
+}
+
+.dark-mode::-webkit-scrollbar-thumb {
+  background: #2f3d50;
+}
+
+.dark-mode::-webkit-scrollbar-thumb:hover {
+  background: #37465c;
+}
+
+.dark-mode::-webkit-scrollbar-thumb:active {
+  background: #415169;
+}
+
+/* Light mode */
+
+.light-mode::-webkit-scrollbar {
+  width: 10px;
+}
+
+.light-mode::-webkit-scrollbar-track {
+  background: var(--secondary-background);
+}
+
+.light-mode::-webkit-scrollbar-thumb {
+  background: #dddcdc;
+}
+
+.light-mode::-webkit-scrollbar-thumb:hover {
+  background: #cacaca;
+}
+
+.light-mode::-webkit-scrollbar-thumb:active {
+  background: #bbbbbb;
+}

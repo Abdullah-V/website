@@ -16,7 +16,22 @@ export default {
       { name: 'revisit-after', content: '1 days'},
       { name: 'keywords', content: 'Abdullah,Veliyev,Abdullah Veliyev,Personal,website,Personal website'},
       { name: 'distribution', content: 'global' },
-      { name: 'theme-color', content: '#106EE3' }
+      { name: 'theme-color', content: '#106EE3' },
+      // Open Graph protocol
+      { property: 'og:type', content: 'website' },
+      { property: 'og:url', content: process.env.BASE },
+      { property: 'og:title', content: 'Personal website of Abdullah' },
+      { property: 'og:description', content: 'Some things about me.' },
+      { property: 'og:image', content: './assets/images/pp.jpg' },
+      // Twitter card
+      { property:'twitter:card', content: 'summary_large_image' },
+      { property:'twitter:title', content: 'Personal website of Abdullah' },
+      { property:'twitter:description', content: 'Some things about me.' },
+      { property:'twitter:creator', content: '@Abdullah_V_2005' },
+      { property:'twitter:site', content: '@Abdullah_V_2005' },
+      { property:'twitter:image', content: './assets/images/pp.jpg' },
+      { property:'twitter:image:alt', content: 'Avatar image' },
+      { property:'twitter:url', content: process.env.BASE }
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }

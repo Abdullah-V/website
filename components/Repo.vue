@@ -1,12 +1,12 @@
 <template>
   <div
-    id="repo-root"
+    class="repo-root"
     v-if="!repoData.fork"
     data-aos="zoom-in"
     data-aos-duration="600"
   >
-    <span id="repo-header"><a target="_blank" :href="repoData.html_url || 'https://github.com/Abdullah-V/' + repoData.repo" id="repo-name">{{ repoData.name || repoData.repo }}</a> <span id="repo-infos">{{ repoData.stargazers_count || repoData.stars || 0}} <i class="fas fa-star"></i> <img v-if="repoData.language" :src="require(`~/assets/icons/${repoData.language.toLowerCase().replace('vue','vuejs')}.svg`)" alt=""> </span> </span>
-    <span id="repo-description">{{ repoData.description }}</span>
+    <span class="repo-header"><a target="_blank" :href="repoData.html_url || 'https://github.com/Abdullah-V/' + repoData.repo" class="repo-name">{{ repoData.name || repoData.repo }}</a> <span class="repo-infos">{{ repoData.stargazers_count || repoData.stars || 0}} <i class="fas fa-star"></i> <img v-if="repoData.language" :src="require(`~/assets/icons/${repoData.language.toLowerCase().replace('vue','vuejs')}.svg`)" alt=""> </span> </span>
+    <span class="repo-description">{{ repoData.description }}</span>
   </div>
 </template>
 
@@ -19,7 +19,7 @@ export default {
 
 <style scoped>
 
-#repo-root {
+.repo-root {
   width: 400px;
   height: 110px;
   background: var(--secondary-background);
@@ -36,19 +36,19 @@ a {
   color: var(--text);
 }
 
-#repo-header {
+.repo-header {
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
-#repo-header img {
+.repo-header img {
   width: 20px;
   height: 20px;
 }
 
-#repo-header #repo-infos{
+.repo-header .repo-infos{
   display: flex;
   align-items: center;
   width: 20%;
@@ -56,13 +56,13 @@ a {
 }
 
 @media only screen and (max-width: 444px) {
-  #repo-header #repo-infos {
+  .repo-header .repo-infos {
     width: 30%;
   }
 }
 
 
-#repo-header #repo-name {
+.repo-header .repo-name {
   width: 80%;
   font-size: 18px;
   white-space: nowrap;
@@ -70,15 +70,15 @@ a {
   text-overflow: ellipsis;
 }
 
-#repo-header #repo-name:hover {
+.repo-header .repo-name:hover {
   text-decoration: underline;
 }
 
-#repo-header i {
+.repo-header i {
   color: #D97706;
 }
 
-#repo-description {
+.repo-description {
   font-size: 16px;
   color: gray;
   overflow: hidden;

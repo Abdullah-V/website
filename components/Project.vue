@@ -1,18 +1,18 @@
 <template>
   <div
-    id="project-root"
+    class="project-root"
     data-aos="zoom-in"
     data-aos-duration="600"
   >
-    <img v-if="projectData.imageURL" id="project-image" :src="projectData.imageURL" alt="image from project">
-    <h2 id="project-title">{{ projectData.name }}</h2>
-    <h4 id="project-description">{{ projectData.description }}</h4>
+    <img v-if="projectData.imageURL" class="project-image" :src="projectData.imageURL" alt="image from project">
+    <h2 class="project-title">{{ projectData.name }}</h2>
+    <h4 class="project-description">{{ projectData.description }}</h4>
     <div class="tech-stack">
       <img :title="item.name" :key="item.name" v-for="item in projectData.techStack" class="icon" :src="require(`~/assets/icons/${item.iconFileName}`)" alt="icon">
     </div>
-    <div id="project-action-buttons">
-      <button v-if="projectData.liveDemoLink" @click="openLink(projectData.liveDemoLink)" id="live">Live demo</button>
-      <button @click="openLink(projectData.sourceCodeLink)" id="source">Source codes</button>
+    <div class="project-action-buttons">
+      <button v-if="projectData.liveDemoLink" @click="openLink(projectData.liveDemoLink)" class="live">Live demo</button>
+      <button @click="openLink(projectData.sourceCodeLink)" class="source">Source codes</button>
     </div>
   </div>
 </template>
@@ -33,7 +33,7 @@ export default {
 
 <style scoped>
 
-#project-root {
+.project-root {
   width: 350px;
   height: auto;
   padding: 0 10px 10px 10px;
@@ -43,18 +43,18 @@ export default {
   cursor: pointer;
 }
 
-#project-root #project-image {
+.project-root .project-image {
   width: 100%;
   height: 250px;
   border-radius: 2px;
   margin-top: 10px;
 }
 
-#project-title {
+.project-title {
   margin: 10px 0;
 }
 
-#project-description {
+.project-description {
   font-weight: normal;
   color: gray;
 }
@@ -72,7 +72,7 @@ export default {
   margin: 5px 20px 5px 0;
 }
 
-#project-action-buttons {
+.project-action-buttons {
   width: 100%;
   height: 60px;
   display: flex;
@@ -80,7 +80,7 @@ export default {
   justify-content: space-between;
 }
 
-#project-action-buttons button {
+.project-action-buttons button {
   width: 48%;
   height: 90%;
   border-radius: 5px;
@@ -88,22 +88,22 @@ export default {
   transition: 300ms all;
 }
 
-#project-action-buttons #live {
+.project-action-buttons .live {
   background: transparent;
   border: 1px solid var(--primary);
   color: var(--primary);
 }
 
-#project-action-buttons #source {
+.project-action-buttons .source {
   background: var(--primary);
   color: white;
 }
 
-#project-action-buttons #source:hover {
+.project-action-buttons .source:hover {
   background: var(--secondary);
 }
 
-#project-action-buttons #live:hover {
+.project-action-buttons .live:hover {
   background: var(--primary);
   color: white;
 }

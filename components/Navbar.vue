@@ -2,15 +2,11 @@
   <div id="navbar-root">
 
     <div id="large-devices">
-      <nuxt-link style="cursor:pointer;" to="/" tag="h1">. / Abdullah</nuxt-link>
+      <h1 @click="routeToHome()" style="cursor:pointer;">. / Abdullah</h1>
       <div class="links">
 
 
-        <nuxt-link class="link" to="/#top">Home</nuxt-link>
-        <nuxt-link class="link" to="/#projects-section">Projects</nuxt-link>
-        <nuxt-link class="link" to="/#skills-section">Skills</nuxt-link>
-        <nuxt-link class="link" to="/#repos-section">Repositories</nuxt-link>
-        <nuxt-link class="link" to="/#contact-section">Contact</nuxt-link>
+        <nuxt-link class="link" :to="path.path" :key="path.name" v-for="path in paths">{{ path.name }}</nuxt-link>
 
         <button v-show="$colorMode.preference === 'light'" @click="$colorMode.preference = 'dark'" class="mode-switcher"><i class="fas fa-moon"></i> </button>
 
@@ -29,11 +25,7 @@
       <div id="narrow-devices-menu-header"><h2>Menu</h2> <i @click="isMenu = false" class="fas fa-times"></i> </div>
 
       <div class="narrow-devices-menu-links">
-        <button @click="routeToSection('/#top')" class="narrow-menu-link">Home</button>
-        <button @click="routeToSection('/#projects-section')" class="narrow-menu-link">Projects</button>
-        <button @click="routeToSection('/#skills-section')" class="narrow-menu-link">Skills</button>
-        <button @click="routeToSection('/#repos-section')" class="narrow-menu-link">Repositories</button>
-        <button @click="routeToSection('/#contact-section')" class="narrow-menu-link">Contact</button>
+        <button class="narrow-menu-link" @click="routeToSection(path.path)" :key="path.name" v-for="path in paths">{{ path.name }}</button>
       </div>
 
       <button @click="$colorMode.preference = 'light'" style="font-size: 24px" v-if="$colorMode.preference === 'dark'" class="narrow-menu-link"><i class="fas fa-sun"></i></button>
@@ -45,8 +37,6 @@
           {{ $colorMode.preference = 'dark' }}
     </span>
 
-    <!-- <button @click="log()">Click</button> -->
-
   </div>
 </template>
 
@@ -56,6 +46,28 @@ export default {
   data() {
     return {
       isMenu: false,
+      paths: [
+        {
+          name: 'Projects',
+          path: '/#projects-section'
+        },
+        {
+          name: 'Skills',
+          path: '/#skills-section'
+        },
+        {
+          name: 'Repositories',
+          path: '/#repos-section'
+        },
+        {
+          name: 'Experince',
+          path: '/#jobs-section'
+        },
+        {
+          name: 'Contact',
+          path: '/#contact-section'
+        }
+      ]
     }
   },
   methods: {
@@ -63,9 +75,9 @@ export default {
       this.$router.push({path: sectionHash})
       this.isMenu = false
     },
-    // log() {
-    //   console.log("Heeey!")
-    // }
+    routeToHome() {
+      this.$route.hash === '#top' ? this.$router.push({path: '/'}) : this.$router.push({path: '/#top'})
+    }
   }
 }
 </script>

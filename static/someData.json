@@ -27,6 +27,16 @@
       "iconFileName": "nuxtjs.svg"
     },
     {
+      "name": "React.js",
+      "percent": "85%",
+      "iconFileName": "reactjs.svg"
+    },
+    {
+      "name": "GraphQL",
+      "percent": "40%",
+      "iconFileName": "graphql.svg"
+    },
+    {
       "name": "Node.js",
       "percent": "90%",
       "iconFileName": "nodejs.svg"
@@ -253,13 +263,6 @@
       "location": "Remote",
       "interval": "09.05.2021 - Current",
       "imageName": "producter.png"
-    },
-    {
-      "name": "Freelance",
-      "position": "Software developer",
-      "location": "Remote",
-      "interval": "07.05.2021 - Current",
-      "imageName": "freelance.svg"
     }
   ]
 }

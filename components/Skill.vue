@@ -1,10 +1,10 @@
 <template>
   <div
-    id="skill-root"
+    class="skill-root"
     data-aos="zoom-in"
     data-aos-duration="600"
   >
-    <img id="skill-icon" :src="require(`~/assets/icons/${skillData.iconFileName}`)" alt="">
+    <img class="skill-icon" :src="require(`~/assets/icons/${skillData.iconFileName}`)" alt="">
     <div class="skill-container">
       <h2>{{ skillData.name }}</h2>
       <div class="progress-bar">
@@ -23,7 +23,7 @@ export default {
 
 <style scoped>
 
-#skill-root {
+.skill-root {
   width: 300px;
   height: 100px;
   background: var(--secondary-background);
@@ -35,7 +35,7 @@ export default {
   cursor: pointer;
 }
 
-#skill-icon {
+.skill-icon {
   width: 20%;
   height: 100%;
   margin-right: 10px;

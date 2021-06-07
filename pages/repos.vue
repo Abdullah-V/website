@@ -1,5 +1,5 @@
 <template>
-  <div id="repos-root">
+  <div class="repos-root">
     <h1>All repositories</h1>
     <div class="repos-container">
       <Repo v-for="repo in $store.state.allRepos" :repo-data="repo" :key="repo.id" />
