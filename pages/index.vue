@@ -59,7 +59,7 @@
     </div>
 
     <div style="display: flex;flex-direction: column;align-items: center" v-if="$store.state.pinnedRepos.length" id="repos-section">
-      <h1 style="margin-bottom: 50px" class="section-title">Pinned Github repositories</h1>
+      <h1 style="margin-bottom: 50px; margin-top: 115px" class="section-title">Pinned Github repositories</h1>
 
       <div class="repos-container">
         <Repo v-for="repo in $store.state.pinnedRepos" :repo-data="repo" :key="repo.id" />
@@ -133,7 +133,7 @@ export default {
     doNotification(){
       this.$notify({
         title: 'Message sent',
-        text: 'Your message sent successfully.I reply you via email in soon',
+        text: 'Your message sent successfully. I reply you via email in soon',
         speed: 500,
         duration: 4000,
         group: 'foo',

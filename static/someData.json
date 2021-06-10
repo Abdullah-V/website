@@ -75,7 +75,7 @@
   "projects": [
     {
       "name": "Cargoglobal",
-      "description": "Cargoglobal is a site for share logistic adversiments",
+      "description": "Cargoglobal is a site for share logistic advertisements",
       "sourceCodeLink": "https://github.com/Abdullah-V/cargoglobal-frontend",
       "liveDemoLink": "https://cargoglobal.herokuapp.com",
       "imageURL": "https://raw.githubusercontent.com/Abdullah-V/media/master/cargoglobal.png",
@@ -194,7 +194,7 @@
     {
       "name": "Turkish proverbs API",
       "description": "API for Turkish proverbs",
-      "sourceCodeLink": "https://github.com/Abdullah-V/Password-Generator-V2",
+      "sourceCodeLink": "https://github.com/Abdullah-V/Turkce-Atasozleri-icin-API",
       "techStack": [
         {
           "name": "javascript",
