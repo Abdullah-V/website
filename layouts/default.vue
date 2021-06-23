@@ -18,7 +18,7 @@ import Navbar from "~/components/Navbar";
 export default {
   created() {
 
-    this.getRepos()
+    this.setRepos()
 
     if(process.client) {
 
@@ -56,7 +56,7 @@ export default {
         })
       }
     },
-    getRepos() {
+    setRepos() {
 
       this.$axios.$get('https://api.github.com/users/Abdullah-V/repos')
         .then(async (result) => {

@@ -17,6 +17,11 @@
       "iconFileName": "javascript.svg"
     },
     {
+      "name": "Python",
+      "percent": "70%",
+      "iconFileName": "python.svg"
+    },
+    {
       "name": "Vue.js",
       "percent": "95%",
       "iconFileName": "vuejs.svg"
@@ -45,6 +50,11 @@
       "name": "Express.js",
       "percent": "80%",
       "iconFileName": "expressjs.svg"
+    },
+    {
+      "name": "Django",
+      "percent": "70%",
+      "iconFileName": "django.svg"
     },
     {
       "name": "Electron.js",

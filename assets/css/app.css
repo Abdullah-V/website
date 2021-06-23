@@ -1,19 +1,4 @@
-html {
-  --primary: #106EE3;
-  --secondary: #034AA1;
-}
-
-html.dark-mode {
-  --primary-background: #111827;
-  --secondary-background: #1f2937;
-  --text: white;
-}
-
-html.light-mode {
-  --primary-background: #ffffff;
-  --secondary-background: #efefef;
-  --text: black;
-}
+@import url('./variables.css');
 
 html,
 body,
@@ -57,6 +42,12 @@ body,
 html body #__nuxt #__layout>div {
   width: 100%;
   height: 100%;
+  max-width: 1500px;
+}
+
+html body #__nuxt #__layout {
+  display: flex;
+  justify-content: center;
 }
 
 button {
@@ -64,6 +55,7 @@ button {
 }
 
 /* Scrollbar */
+
 
 /* Dark mode */
 

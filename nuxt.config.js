@@ -1,118 +1,30 @@
+import head from './config/head.js'
+import css from './config/css.js'
+import plugins from './config/plugins.js'
+import buildModules from './config/buildModules.js'
+import modules from './config/modules.js'
+import pwa from './config/pwa.js'
+import env from './config/env.js'
+import robots from './config/robots.js'
+import sitemap from './config/sitemap.js'
+
 export default {
+  head,
+  css,
+  plugins,
+  buildModules,
+  modules,
+  pwa,
+  env,
+  robots,
+  sitemap,
 
-  // Global page headers: https://go.nuxtjs.dev/config-head
-  head: {
-    title: '. /Abdullah',
-    meta: [
-      { charset: 'utf-8' },
-      { name: 'language', content: 'en-EN'},
-      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { name: 'description', content: 'Personal website of Abdullah V.' },
-      { name: 'author', content: 'Abdullah Veliyev'},
-      { name: 'designer', content: 'Abdullah Veliyev' },
-      { name: 'publisher', content: 'Abdullah Veliyev' },
-      { name: 'web_author', content: 'Abdullah Veliyev' },
-      { name: 'rating', content: 'general'},
-      { name: 'revisit-after', content: '1 days'},
-      { name: 'keywords', content: 'Abdullah,Veliyev,Abdullah Veliyev,Personal,website,Personal website'},
-      { name: 'distribution', content: 'global' },
-      { name: 'theme-color', content: '#106EE3' },
-      // Open Graph protocol
-      { property: 'og:type', content: 'website' },
-      { property: 'og:url', content: process.env.BASE },
-      { property: 'og:title', content: 'Personal website of Abdullah' },
-      { property: 'og:description', content: 'Some things about me.' },
-      { property: 'og:image', content: './assets/images/pp.jpg' },
-      // Twitter card
-      { property:'twitter:card', content: 'summary_large_image' },
-      { property:'twitter:title', content: 'Personal website of Abdullah' },
-      { property:'twitter:description', content: 'Some things about me.' },
-      { property:'twitter:creator', content: '@Abdullah_V_2005' },
-      { property:'twitter:site', content: '@Abdullah_V_2005' },
-      { property:'twitter:image', content: './assets/images/pp.jpg' },
-      { property:'twitter:image:alt', content: 'Avatar image' },
-      { property:'twitter:url', content: process.env.BASE }
-    ],
-    link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
-    ],
-    script:[
-      {src: 'https://kit.fontawesome.com/4d8d9d6354.js'},
-    ]
-  },
 
-  // Global CSS: https://go.nuxtjs.dev/config-css
-  css: [
-    "@/assets/css/app.css"
-  ],
+  // Others
 
-  // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: [
-    {
-      src: "~/plugins/aos",
-      ssr: false
-    },
-    {
-      src: "~/plugins/vue-notification",
-      ssr: false
-    },
-  ],
-
-  // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
-
-  // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
-  buildModules: [
-    '@nuxtjs/color-mode'
-  ],
-
-  // Modules: https://go.nuxtjs.dev/config-modules
-  modules: [
-    // https://go.nuxtjs.dev/pwa
-    '@nuxtjs/pwa',
-    '@nuxtjs/axios',
-    '@nuxtjs/sitemap',
-    '@nuxtjs/robots',
-  ],
-
-  sitemap: {
-    hostname: process.env.BASE,
-    gzip: true,
-  },
-
-  robots: {
-    Sitemap: `${process.env.BASE}/sitemap.xml`
-  },
-
-  env: {
-    EMAIL: process.env.EMAIL,
-    EMAIL_PASSWORD: process.env.EMAIL_PASSWORD,
-    BASE: process.env.BASE
-  },
-
-  // PWA module configuration: https://go.nuxtjs.dev/pwa
-  pwa: {
-    manifest: {
-      lang: 'en',
-      name: 'Website',
-      short_name: 'Website',
-      description: "Personal website of Abdullah V.",
-      theme_color: "#106EE3",
-    },
-    meta: {
-      author: 'Abdullah Veliyev',
-    },
-  },
-
-  // Build Configuration: https://go.nuxtjs.dev/config-build
-  // build: {
-  //   filenames: {
-  //     chunk: ({ isDev }) => isDev ? '[name].js' : '[chunkhash].js'
-  //   }
-  // },
 
   serverMiddleware: {
     '/api': '~/api'
   },
-
 }

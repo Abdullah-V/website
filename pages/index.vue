@@ -9,11 +9,11 @@
         </div>
         <h1>Abdullah Veliyev</h1>
         <p>Fullstack web developer</p>
-        <span><i style="margin-right: 3px" class="fas fa-map-marker-alt"></i> Azerbaijan - Baku</span>
-        <span><i style="margin-right: 3px" class="fas fa-school"></i> High school in XDTG</span>
-        <span><i style="margin-right: 3px" class="far fa-calendar-alt"></i> 26.01.2005</span>
-        <span><i style="margin-right: 3px" class="fas fa-building"></i> <a :style="{color: 'var(--text)', letterSpacing: '1.5px'}" target="_blank" href="https://producter.co">Producter</a></span>
-        <span> <i class="fas fa-info-circle"></i> I am currently eligible to work as a fullstack, frontend or backend developer for remote part-time, full-time and freelance jobs. </span>
+        <span title="Location"><i style="margin-right: 3px" class="fas fa-map-marker-alt"></i> Baku, Azerbaijan</span>
+        <span title="Current education"><i style="margin-right: 3px" class="fas fa-school"></i> High school in XDTG</span>
+        <span title="Date of birth"><i style="margin-right: 3px" class="far fa-calendar-alt"></i> 26.01.2005</span>
+        <span title="Company"><i style="margin-right: 3px" class="fas fa-building"></i> <a :style="{color: 'var(--text)', letterSpacing: '1.5px'}" target="_blank" href="https://producter.co">Producter</a></span>
+        <span title="Works i can get"> <i class="fas fa-info-circle"></i> I am currently eligible to work as a fullstack, frontend or backend developer for remote part-time, full-time and freelance jobs. </span>
         <a target="_blank" href="https://github.com/Abdullah-V/media/blob/master/CV.pdf"><button class="primary-button resume-button">See resume</button></a>
       </div>
 
@@ -30,11 +30,11 @@
           motivation for me to continue programming.
         </p>
         <div class="social-buttons-container">
-          <a target="_blank" href="https://github.com/Abdullah-V"><button class="social-button"><i class="fab fa-github"></i></button></a>
-          <a target="_blank" href="https://twitter.com/Abdullah_V_2005"><button class="social-button"><i class="fab fa-twitter"></i></button></a>
-          <a target="_blank" href="https://t.me/Abdullah_V_2005"><button class="social-button"><i class="fab fa-telegram-plane"></i></button></a>
-          <a target="_blank" href="mailto:abdullahveliyev2005@gmail.com"><button class="social-button"><i class="fas fa-envelope"></i></button></a>
-          <a target="_blank" href="https://discord.com/users/715280927575507034"><button class="social-button"><i class="fab fa-discord"></i></button></a>
+          <a title="Github" target="_blank" href="https://github.com/Abdullah-V"><button class="social-button"><i class="fab fa-github"></i></button></a>
+          <a title="Twitter" target="_blank" href="https://twitter.com/Abdullah_V_2005"><button class="social-button"><i class="fab fa-twitter"></i></button></a>
+          <a title="Telegram" target="_blank" href="https://t.me/Abdullah_V_2005"><button class="social-button"><i class="fab fa-telegram-plane"></i></button></a>
+          <a title="Email" target="_blank" href="mailto:abdullahveliyev2005@gmail.com"><button class="social-button"><i class="fas fa-envelope"></i></button></a>
+          <a title="Discord" target="_blank" href="https://discord.com/users/715280927575507034"><button class="social-button"><i class="fab fa-discord"></i></button></a>
         </div>
       </div>
     </div>
@@ -87,7 +87,7 @@
           <input @keyup="validateForm()" v-model="contactInfos.name" type="text" placeholder="Your name">
           <input @keyup="validateForm()" v-model="contactInfos.email" type="email" placeholder="Your email">
           <input @keyup="validateForm()" v-model="contactInfos.subject" type="text" placeholder="Subject">
-          <textarea @keyup="validateForm()" v-model="contactInfos.message" placeholder="Message"></textarea>
+          <textarea @keydown.enter.ctrl="isValidForm && !isSending ? send() : ''" @keyup="validateForm()" v-model="contactInfos.message" placeholder="Message"></textarea>
           <button :disabled="!isValidForm" @click="send()" :class="{disabled: !isValidForm || isSending,enabled: isValidForm}" id="submit"> <span v-if="isSending" class="lds-dual-ring"></span>
             <i v-if="!isSending" style="margin-right: 15px" class="fas fa-paper-plane"></i>Submit</button>
         </div>
