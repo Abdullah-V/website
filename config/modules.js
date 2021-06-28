@@ -3,6 +3,7 @@ const modules = [
   '@nuxtjs/axios',
   '@nuxtjs/sitemap',
   '@nuxtjs/robots',
+  '@nuxtjs/google-analytics'
 ]
 
 export default modules

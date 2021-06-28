@@ -1,6 +1,5 @@
 const buildModules = [
-  '@nuxtjs/color-mode',
-  '@nuxtjs/google-analytics'
+  '@nuxtjs/color-mode'
 ]
 
 export default buildModules

@@ -66,7 +66,7 @@ export default {
           this.$store.state.allRepos = await result
         })
 
-      this.$axios.$get('https://gh-pinned-repos.vercel.app/?username=Abdullah-V')
+      this.$axios.$get('https://gist.githubusercontent.com/Abdullah-V/ec5938d1ba7ef2bad2c976777a677500/raw/311650aa6c0ceca6bbf06bf960b300e16a1109a9/gh-pinned-repos.json')
         .then(async (result) => {
           this.$store.state.pinnedRepos = await result
         })
