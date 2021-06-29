@@ -7,7 +7,6 @@ import pwa from './config/modules/pwa.js'
 import env from './config/env.js'
 import robots from './config/modules/robots.js'
 import sitemap from './config/modules/sitemap.js'
-import googleAnalytics from './config/modules/googleAnalytics.js'
 
 export default {
   head,
@@ -19,7 +18,6 @@ export default {
   env,
   robots,
   sitemap,
-  googleAnalytics,
 
 
   // Others
