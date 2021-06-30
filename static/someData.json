@@ -7,10 +7,9 @@
     },
     {
       "name": "CSS",
-      "percent": "70%",
+      "percent": "80%",
       "iconFileName": "css.svg"
     },
-
     {
       "name": "Javascript",
       "percent": "90%",
@@ -48,7 +47,7 @@
     },
     {
       "name": "Express.js",
-      "percent": "80%",
+      "percent": "85%",
       "iconFileName": "expressjs.svg"
     },
     {
@@ -91,31 +90,19 @@
       "imageURL": "https://raw.githubusercontent.com/Abdullah-V/media/master/cargoglobal.png",
       "techStack": [
         {
-          "name": "html",
-          "iconFileName": "html.svg"
-        },
-        {
-          "name": "css",
-          "iconFileName": "css.svg"
-        },
-        {
-          "name": "javascript",
-          "iconFileName": "javascript.svg"
-        },
-        {
-          "name": "nuxt.js",
+          "name": "Nuxt.js",
           "iconFileName": "nuxtjs.svg"
         },
         {
-          "name": "mongodb",
+          "name": "MongoDB",
           "iconFileName": "mongodb.svg"
         },
         {
-          "name": "nodejs",
+          "name": "Node.js",
           "iconFileName": "nodejs.svg"
         },
         {
-          "name": "express.js",
+          "name": "Express.js",
           "iconFileName": "expressjs.svg"
         }
       ]
@@ -128,31 +115,19 @@
       "imageURL": "https://raw.githubusercontent.com/Abdullah-V/media/master/twitterClone.png",
       "techStack": [
         {
-          "name": "html",
-          "iconFileName": "html.svg"
-        },
-        {
-          "name": "css",
-          "iconFileName": "css.svg"
-        },
-        {
-          "name": "javascript",
-          "iconFileName": "javascript.svg"
-        },
-        {
-          "name": "vue.js",
+          "name": "Vue.js",
           "iconFileName": "vuejs.svg"
         },
         {
-          "name": "mongodb",
+          "name": "MongoDB",
           "iconFileName": "mongodb.svg"
         },
         {
-          "name": "nodejs",
+          "name": "Node.js",
           "iconFileName": "nodejs.svg"
         },
         {
-          "name": "express.js",
+          "name": "Express.js",
           "iconFileName": "expressjs.svg"
         }
       ]
@@ -164,19 +139,7 @@
       "imageURL": "https://raw.githubusercontent.com/Abdullah-V/media/master/website.png",
       "techStack": [
         {
-          "name": "html",
-          "iconFileName": "html.svg"
-        },
-        {
-          "name": "css",
-          "iconFileName": "css.svg"
-        },
-        {
-          "name": "javascript",
-          "iconFileName": "javascript.svg"
-        },
-        {
-          "name": "nuxt.js",
+          "name": "Nuxt.js",
           "iconFileName": "nuxtjs.svg"
         }
       ]
@@ -188,15 +151,15 @@
       "imageURL": "https://raw.githubusercontent.com/Abdullah-V/media/master/HMSC.png",
       "techStack": [
         {
-          "name": "javascript",
+          "name": "JavaScript",
           "iconFileName": "javascript.svg"
         },
         {
-          "name": "nodejs",
+          "name": "Node.js",
           "iconFileName": "nodejs.svg"
         },
         {
-          "name": "npm",
+          "name": "NPM",
           "iconFileName": "npm.svg"
         }
       ]
@@ -204,14 +167,15 @@
     {
       "name": "Turkish proverbs API",
       "description": "API for Turkish proverbs",
+      "imageURL": "https://raw.githubusercontent.com/Abdullah-V/media/master/tr-proverbs-api.png",
       "sourceCodeLink": "https://github.com/Abdullah-V/Turkce-Atasozleri-icin-API",
       "techStack": [
         {
-          "name": "javascript",
-          "iconFileName": "javascript.svg"
+          "name": "Node.js",
+          "iconFileName": "nodejs.svg"
         },
         {
-          "name": "express.js",
+          "name": "Express.js",
           "iconFileName": "expressjs.svg"
         }
       ]
@@ -223,19 +187,7 @@
       "imageURL": "https://raw.githubusercontent.com/Abdullah-V/media/master/password-gen.png",
       "techStack": [
         {
-          "name": "html",
-          "iconFileName": "html.svg"
-        },
-        {
-          "name": "css",
-          "iconFileName": "css.svg"
-        },
-        {
-          "name": "javascript",
-          "iconFileName": "javascript.svg"
-        },
-        {
-          "name": "vue.js",
+          "name": "Vue.js",
           "iconFileName": "vuejs.svg"
         }
       ]
@@ -247,19 +199,7 @@
       "imageURL": "https://raw.githubusercontent.com/Abdullah-V/media/master/palette-gen.png",
       "techStack": [
         {
-          "name": "html",
-          "iconFileName": "html.svg"
-        },
-        {
-          "name": "css",
-          "iconFileName": "css.svg"
-        },
-        {
-          "name": "javascript",
-          "iconFileName": "javascript.svg"
-        },
-        {
-          "name": "vue.js",
+          "name": "Vue.js",
           "iconFileName": "vuejs.svg"
         }
       ]
@@ -274,5 +214,53 @@
       "interval": "09.05.2021 - Current",
       "imageName": "producter.png"
     }
+  ],
+  "links": [
+    {
+      "name": "Github",
+      "icon": "github.svg",
+      "url": "https://github.com/Abdullah-V"
+    },
+    {
+      "name": "Twitter",
+      "icon": "twitter.svg",
+      "url": "https://twitter.com/Abdullah_V_2005"
+    },
+    {
+      "name": "Linkedin",
+      "icon": "linkedin.svg",
+      "url": "https://linkedin.com/in/Abdullah-V"
+    },
+    {
+      "name": "Polywork",
+      "icon": "polywork.svg",
+      "url": "https://www.polywork.com/abdullah_v"
+    },
+    {
+      "name": "Superpeer",
+      "icon": "superpeer.png",
+      "url": "https://superpeer.com/Abdullah-V"
+    },
+    {
+      "name": "Clubhouse",
+      "icon": "clubhouse.png",
+      "url": "https://www.joinclubhouse.com/@Abdullah-V"
+    },
+    {
+      "name": "Telegram",
+      "icon": "telegram.svg",
+      "url": "https://t.me/Abdullah_V_2005"
+    },
+    {
+      "name": "Discord",
+      "icon": "discord.svg",
+      "url": "https://discord.com/users/715280927575507034"
+    },
+    {
+      "name": "Email",
+      "icon": "email.svg",
+      "url": "mailto:abdullahveliyev2005@gmail.com"
+    }
   ]
 }
+

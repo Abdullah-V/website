@@ -1,8 +1,3 @@
-import googleAnalytics from "./modules/googleAnalytics.js"
+const buildModules = ["@nuxtjs/color-mode"];
 
-const buildModules = [
-  '@nuxtjs/color-mode',
-  ["@nuxtjs/google-analytics", googleAnalytics]
-]
-
-export default buildModules
+export default buildModules;

@@ -11,7 +11,7 @@
         <p>Fullstack web developer</p>
         <span title="Location"><i style="margin-right: 3px" class="fas fa-map-marker-alt"></i> Baku, Azerbaijan</span>
         <span title="Current education"><i style="margin-right: 3px" class="fas fa-school"></i> High school in XDTG</span>
-        <span title="Date of birth"><i style="margin-right: 3px" class="far fa-calendar-alt"></i> 26.01.2005</span>
+        <!-- <span title="Date of birth"><i style="margin-right: 3px" class="far fa-calendar-alt"></i> 26.01.2005</span> -->
         <span title="Company"><i style="margin-right: 3px" class="fas fa-building"></i> <a :style="{color: 'var(--text)', letterSpacing: '1.5px'}" target="_blank" href="https://producter.co">Producter</a></span>
         <span title="Works i can get"> <i class="fas fa-info-circle"></i> I am currently eligible to work as a fullstack, frontend or backend developer for remote part-time, full-time and freelance jobs. </span>
         <a target="_blank" href="https://github.com/Abdullah-V/media/blob/master/CV.pdf"><button class="primary-button resume-button">See resume</button></a>
@@ -20,22 +20,14 @@
       <div class="container2">
         <h1>Little about me</h1>
         <p style="text-align: center">
-          My name is Abdullah. I was born in Azerbaijan, Baku
-          in 2005. I started my school life
-          in 2011. I am studying in 10th grade. I
-          started to be interested in programming in
-          April 2020. My motivation to start
-          programming was to be beneficial to people
-          by doing my dream projects, which is the
-          motivation for me to continue programming.
+          Hello there! I'm Abdullah.
+          I am studying high school in Azerbaijan.
+          On April 26, 2020, I stepped into the software by writing my first line of code.
+          Since then, I have been dealing with topics such as the web, cybersecurity and artificial intelligence.
+          I describe myself more as a fullstack web developer.
+          I am currently working as a frontend developer at Producter company.
         </p>
-        <div class="social-buttons-container">
-          <a title="Github" target="_blank" href="https://github.com/Abdullah-V"><button class="social-button"><i class="fab fa-github"></i></button></a>
-          <a title="Twitter" target="_blank" href="https://twitter.com/Abdullah_V_2005"><button class="social-button"><i class="fab fa-twitter"></i></button></a>
-          <a title="Telegram" target="_blank" href="https://t.me/Abdullah_V_2005"><button class="social-button"><i class="fab fa-telegram-plane"></i></button></a>
-          <a title="Email" target="_blank" href="mailto:abdullahveliyev2005@gmail.com"><button class="social-button"><i class="fas fa-envelope"></i></button></a>
-          <a title="Discord" target="_blank" href="https://discord.com/users/715280927575507034"><button class="social-button"><i class="fab fa-discord"></i></button></a>
-        </div>
+        <a href="#links-section"><button class="primary-button resume-button">Social links</button></a>
       </div>
     </div>
 
@@ -78,6 +70,15 @@
 
     </div>
 
+    <div id="links-section">
+      <h1 class="section-title">Social links</h1>
+
+      <div class="links-container">
+        <Link v-for="link in links" :key="link.name" :linkInfo="link" />
+      </div>
+
+    </div>
+
     <div id="contact-section">
       <h1 class="section-title">Contact with me</h1>
 
@@ -105,6 +106,7 @@ import Project from "~/components/Project";
 import Skill from "~/components/Skill";
 import Repo from "~/components/Repo";
 import Job from "~/components/Job";
+import Link from "~/components/Link";
 import someData from '~/static/someData.json';
 
 export default {
@@ -112,13 +114,15 @@ export default {
     Project,
     Skill,
     Repo,
-    Job
+    Job,
+    Link
   },
   data() {
     return {
       skills: someData.skills,
       projects: someData.projects,
       jobs: someData.jobs,
+      links: someData.links,
       isValidForm: false,
       isSending: false,
       contactInfos: {
@@ -282,7 +286,8 @@ p {
 
 .skills-container,
 .projects-container,
-.repos-container {
+.repos-container,
+.links-container {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -292,6 +297,13 @@ p {
 .repos-container {
   width: 90%;
   margin: auto;
+}
+
+.links-container {
+  width: 75%;
+  margin: auto;
+  row-gap: 30px;
+  column-gap: 10px;
 }
 
 
@@ -443,6 +455,9 @@ p {
   #contact-form {
     width: 80%;
     height: 45%;
+  }
+  .links-container {
+    width: 90%;
   }
 }
 
