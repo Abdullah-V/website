@@ -36,7 +36,7 @@ export default {
 
 .link-root:hover {
   transition: all 200ms;
-  transform: scale(1.1);
+  transform: scale(1.1) !important;
 }
 
 .link-root img {
