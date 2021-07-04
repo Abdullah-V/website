@@ -54,6 +54,14 @@ button {
   cursor: pointer;
 }
 
+a {
+  color: var(--text);
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
 /* Scrollbar */
 
 

@@ -6,7 +6,7 @@
       <div class="links">
 
 
-        <nuxt-link class="link" :to="path.path" :key="path.name" v-for="path in paths">{{ path.name }}</nuxt-link>
+        <a class="link" :href="path.path" :key="path.name" v-for="path in paths">{{ path.name }}</a>
 
         <button v-show="$colorMode.preference === 'light'" @click="$colorMode.preference = 'dark'" class="mode-switcher"><i class="fas fa-moon"></i> </button>
 
@@ -25,7 +25,7 @@
       <div id="narrow-devices-menu-header"><h2>Menu</h2> <i @click="isMenu = false" class="fas fa-times"></i> </div>
 
       <div class="narrow-devices-menu-links">
-        <button class="narrow-menu-link" @click="routeToSection(path.path)" :key="path.name" v-for="path in paths">{{ path.name }}</button>
+        <a class="narrow-menu-link" @click="closeMobileMenu()" :href="path.path" :key="path.name" v-for="path in paths">{{ path.name }}</a>
       </div>
 
       <button @click="$colorMode.preference = 'light'" style="font-size: 24px" v-if="$colorMode.preference === 'dark'" class="narrow-menu-link"><i class="fas fa-sun"></i></button>
@@ -71,8 +71,7 @@ export default {
     }
   },
   methods: {
-    routeToSection(sectionHash) {
-      this.$router.push({path: sectionHash})
+    closeMobileMenu() {
       this.isMenu = false
     },
     routeToHome() {
@@ -178,6 +177,10 @@ export default {
 }
 
 .narrow-menu-link {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 100%;
   height: 40px;
   color: var(--text);

@@ -7,10 +7,12 @@ html.dark-mode {
   --primary-background: #111827;
   --secondary-background: #1f2937;
   --text: white;
+  --secondary-text: #b1b1b1;
 }
 
 html.light-mode {
   --primary-background: #ffffff;
   --secondary-background: #efefef;
   --text: black;
+  --secondary-text: #5f5f5f;
 }

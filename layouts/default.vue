@@ -18,7 +18,7 @@ import Navbar from "~/components/Navbar";
 export default {
   created() {
 
-    this.setRepos()
+    this.setData()
 
     if(process.client) {
 
@@ -56,7 +56,7 @@ export default {
         })
       }
     },
-    setRepos() {
+    setData() {
 
       this.$axios.$get('https://api.github.com/users/Abdullah-V/repos')
         .then(async (result) => {
@@ -66,9 +66,18 @@ export default {
           this.$store.state.allRepos = await result
         })
 
-      this.$axios.$get('https://gist.githubusercontent.com/Abdullah-V/ec5938d1ba7ef2bad2c976777a677500/raw/311650aa6c0ceca6bbf06bf960b300e16a1109a9/gh-pinned-repos.json')
+      this.$axios.$get('https://raw.githubusercontent.com/Abdullah-V/DATA/master/website/gh-pinned-repos.json')
         .then(async (result) => {
           this.$store.state.pinnedRepos = await result
+      })
+
+      this.$axios.$get('https://api.raindrop.io/rest/v1/raindrops/18890045', {
+        headers: {
+          Authorization: 'Bearer ' + process.env.RAINDROP_ACCESS_TOKEN
+        }
+      })
+        .then(result => {
+          this.$store.state.bookmarks = result.items
         })
 
     },
@@ -80,7 +89,7 @@ export default {
 
 </script>
 
-<style>
+<style scoped>
 
 #move-top {
   position: fixed;

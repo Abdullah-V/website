@@ -50,14 +50,14 @@
 
     </div>
 
-    <div style="display: flex;flex-direction: column;align-items: center" v-if="$store.state.pinnedRepos.length" id="repos-section">
+    <div v-if="$store.state.pinnedRepos.length" id="repos-section">
       <h1 style="margin-bottom: 50px; margin-top: 115px" class="section-title">Pinned Github repositories</h1>
 
       <div class="repos-container">
         <Repo v-for="repo in $store.state.pinnedRepos" :repo-data="repo" :key="repo.id" />
       </div>
 
-      <nuxt-link to="/repos" tag="button" id="see-all-repos">See all repositories <i style="margin-left: 10px" class="far fa-arrow-alt-circle-right"></i> </nuxt-link>
+      <nuxt-link to="/repos" tag="button" id="see-all">See all repositories <i style="margin-left: 10px" class="far fa-arrow-alt-circle-right"></i> </nuxt-link>
 
     </div>
 
@@ -69,6 +69,19 @@
       </div>
 
     </div>
+
+
+    <div v-if="$store.state.bookmarks.length" id="bookmarks-section">
+      <h1 class="section-title">Latest bookmarks</h1>
+
+      <div class="bookmarks-container">
+        <Bookmark :key="bookmark.title" v-for="bookmark in $store.state.bookmarks.slice(0,3)" :infos="bookmark" />
+      </div>
+
+      <nuxt-link style="margin-top: 50px" to="/bookmarks" tag="button" id="see-all">See all bookmarks <i style="margin-left: 10px" class="far fa-arrow-alt-circle-right"></i> </nuxt-link>
+
+    </div>
+
 
     <div id="links-section">
       <h1 class="section-title">Social links</h1>
@@ -107,6 +120,7 @@ import Skill from "~/components/Skill";
 import Repo from "~/components/Repo";
 import Job from "~/components/Job";
 import Link from "~/components/Link";
+import Bookmark from "~/components/Bookmark";
 import someData from '~/static/someData.json';
 
 export default {
@@ -115,7 +129,12 @@ export default {
     Skill,
     Repo,
     Job,
-    Link
+    Link,
+    Bookmark
+  },
+  created() {
+    const linkQuery = this.$route.query.link?.toLowerCase()
+    if(process.client && linkQuery && this.validLinkNames.includes(linkQuery)) window.location.href = this.links.find(link => link.name.toLowerCase() === linkQuery).url
   },
   data() {
     return {
@@ -131,6 +150,7 @@ export default {
         subject: "",
         message: ""
       },
+      validLinkNames: ["github", "twitter", "linkedin", "superpeer", "telegram", "email", "discord", "polywork", "clubhouse"]
     }
   },
   methods: {
@@ -306,9 +326,16 @@ p {
   column-gap: 10px;
 }
 
+#repos-section,
+#bookmarks-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center
+}
 
 
-#see-all-repos {
+
+#see-all {
   background: transparent;
   border: 1px solid var(--primary);
   color: var(--text);
@@ -320,7 +347,7 @@ p {
   margin: 30px 0 40px 0;
 }
 
-#see-all-repos:hover {
+#see-all:hover {
   background: var(--primary);
   color: white;
 }
@@ -394,10 +421,12 @@ p {
   background: var(--secondary);
 }
 
-.jobs-container {
+.jobs-container,
+.bookmarks-container {
   display: flex;
   flex-direction: column;
   align-items: center;
+  row-gap: 50px;
 }
 
 .job-root:first-child {

@@ -32,7 +32,6 @@ export default {
   align-items: center;
   margin: 20px;
   padding: 10px;
-  cursor: pointer;
 }
 
 .skill-icon {

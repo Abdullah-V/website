@@ -26,7 +26,6 @@ export default {
   border-radius: 5px;
   margin: 20px;
   padding: 20px 15px;
-  cursor: pointer;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -68,6 +67,7 @@ a {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  cursor: pointer;
 }
 
 .repo-header .repo-name:hover {

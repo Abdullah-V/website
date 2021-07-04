@@ -40,7 +40,6 @@ export default {
   background: var(--secondary-background);
   margin: 20px;
   border-radius: 4px;
-  cursor: pointer;
 }
 
 .project-root .project-image {
