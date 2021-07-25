@@ -1,8 +1,6 @@
 <template>
   <div
     class="job-root"
-    data-aos="zoom-in"
-    data-aos-duration="600"
   >
     <img :src="require(`~/assets/images/${job.imageName}`)" :alt="job.name">
 

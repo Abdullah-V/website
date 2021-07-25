@@ -1,8 +1,6 @@
 <template>
   <div
     class="project-root"
-    data-aos="zoom-in"
-    data-aos-duration="600"
   >
     <img v-if="projectData.imageURL" class="project-image" :src="projectData.imageURL" alt="image from project">
     <h2 class="project-title">{{ projectData.name }}</h2>

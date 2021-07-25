@@ -14,7 +14,7 @@
         <!-- <span title="Date of birth"><i style="margin-right: 3px" class="far fa-calendar-alt"></i> 26.01.2005</span> -->
         <span title="Company"><i style="margin-right: 3px" class="fas fa-building"></i> <a :style="{color: 'var(--text)', letterSpacing: '1.5px'}" target="_blank" href="https://producter.co">Producter</a></span>
         <span title="Works i can get"> <i class="fas fa-info-circle"></i> I am currently eligible to work as a fullstack, frontend or backend developer for remote part-time, full-time and freelance jobs. </span>
-        <a target="_blank" href="https://github.com/Abdullah-V/media/blob/master/CV.pdf"><button class="primary-button resume-button">See resume</button></a>
+        <a target="_blank" href="https://github.com/Abdullah-V/media/blob/master/CV.pdf"><button class="primary-button">See resume</button></a>
       </div>
 
       <div class="container2">
@@ -22,12 +22,12 @@
         <p style="text-align: center">
           Hello there! I'm Abdullah.
           I am studying high school in Azerbaijan.
-          On April 26, 2020, I stepped into the software by writing my first line of code.
+          On April 26, 2020, I stepped into the programming by writing my first line of code.
           Since then, I have been dealing with topics such as the web, cybersecurity and artificial intelligence.
           I describe myself more as a fullstack web developer.
           I am currently working as a frontend developer at Producter company.
         </p>
-        <a href="#links-section"><button class="primary-button resume-button">Social links</button></a>
+        <a href="#links-section"><button class="primary-button">Social links</button></a>
       </div>
     </div>
 
@@ -57,7 +57,7 @@
         <Repo v-for="repo in $store.state.pinnedRepos" :repo-data="repo" :key="repo.id" />
       </div>
 
-      <nuxt-link to="/repos" tag="button" id="see-all">See all repositories <i style="margin-left: 10px" class="far fa-arrow-alt-circle-right"></i> </nuxt-link>
+      <nuxt-link to="/repos" tag="button" class="secondary-button">See all repositories <i style="margin-left: 10px" class="far fa-arrow-alt-circle-right"></i> </nuxt-link>
 
     </div>
 
@@ -78,7 +78,7 @@
         <Bookmark :key="bookmark.title" v-for="bookmark in $store.state.bookmarks.slice(0,3)" :infos="bookmark" />
       </div>
 
-      <nuxt-link style="margin-top: 50px" to="/bookmarks" tag="button" id="see-all">See all bookmarks <i style="margin-left: 10px" class="far fa-arrow-alt-circle-right"></i> </nuxt-link>
+      <nuxt-link style="margin-top: 50px" to="/bookmarks" tag="button" class="secondary-button">See all bookmarks <i style="margin-left: 10px" class="far fa-arrow-alt-circle-right"></i> </nuxt-link>
 
     </div>
 
@@ -239,20 +239,6 @@ p {
   font-size: 20px;
 }
 
-.resume-button {
-  background: var(--primary);
-  color: white;
-  font-weight: normal;
-  font-size: 18px;
-  transition: 300ms all;
-  padding: 12px 40px;
-  border-radius: 3px;
-}
-
-.resume-button:hover {
-  transform: scale(1.08);
-}
-
 #section1 .container2 {
   width: 550px;
   height: 400px;
@@ -331,25 +317,6 @@ p {
   display: flex;
   flex-direction: column;
   align-items: center
-}
-
-
-
-#see-all {
-  background: transparent;
-  border: 1px solid var(--primary);
-  color: var(--text);
-  font-weight: normal;
-  font-size: 18px;
-  transition: 300ms all;
-  padding: 14px 40px;
-  border-radius: 3px;
-  margin: 30px 0 40px 0;
-}
-
-#see-all:hover {
-  background: var(--primary);
-  color: white;
 }
 
 #contact-container {

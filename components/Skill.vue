@@ -1,8 +1,6 @@
 <template>
   <div
     class="skill-root"
-    data-aos="zoom-in"
-    data-aos-duration="600"
   >
     <img class="skill-icon" :src="require(`~/assets/icons/${skillData.iconFileName}`)" alt="">
     <div class="skill-container">

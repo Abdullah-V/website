@@ -2,8 +2,6 @@
   <div
     class="repo-root"
     v-if="!repoData.fork"
-    data-aos="zoom-in"
-    data-aos-duration="600"
   >
     <span class="repo-header"><a target="_blank" :href="repoData.html_url || 'https://github.com/Abdullah-V/' + repoData.repo" class="repo-name">{{ repoData.name || repoData.repo }}</a> <span class="repo-infos">{{ repoData.stargazers_count || repoData.stars || 0}} <i class="fas fa-star"></i> <img v-if="repoData.language" :src="require(`~/assets/icons/${repoData.language.toLowerCase().replace('vue','vuejs')}.svg`)" alt=""> </span> </span>
     <span class="repo-description">{{ repoData.description }}</span>

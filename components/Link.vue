@@ -2,8 +2,6 @@
   <div
     class="link-root"
     @click="openLink"
-    data-aos="zoom-in"
-    data-aos-duration="600"
   >
     <img :src="require(`~/assets/icons/social/${linkInfo.icon}`)" />
     <span>{{ linkInfo.name }}</span>
@@ -32,10 +30,10 @@ export default {
   cursor: pointer;
   display: flex;
   align-items: center;
+  transition: 300ms all;
 }
 
 .link-root:hover {
-  transition: all 200ms;
   transform: scale(1.1) !important;
 }
 
