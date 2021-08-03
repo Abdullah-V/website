@@ -245,21 +245,6 @@
       "name": "Email",
       "icon": "email.svg",
       "url": "mailto:abdullahveliyev2005@gmail.com"
-    },
-    {
-      "name": "Discord",
-      "icon": "discord.svg",
-      "url": "https://discord.com/users/715280927575507034"
-    },
-    {
-      "name": "Polywork",
-      "icon": "polywork.svg",
-      "url": "https://www.polywork.com/abdullah_v"
-    },
-    {
-      "name": "Clubhouse",
-      "icon": "clubhouse.png",
-      "url": "https://www.joinclubhouse.com/@Abdullah-V"
     }
   ]
 }

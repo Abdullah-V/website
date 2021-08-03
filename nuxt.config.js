@@ -19,12 +19,11 @@ export default {
   robots,
   sitemap,
 
-
   // Others
 
   components: true,
 
   serverMiddleware: {
     '/api': '~/api'
-  },
+  }
 }

@@ -14,7 +14,7 @@
         $store.state.isBookmarksFetching && !$store.state.isBookmarkPagesEnd
       "
     >
-      Load more
+      Loading...
     </button>
     <button
       class="secondary-button"
