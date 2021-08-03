@@ -8,12 +8,19 @@
         :infos="bookmark"
       />
     </div>
-    <button class="secondary-button" v-if="$store.state.isBookmarksFetching && !$store.state.isBookmarkPagesEnd">
+    <button
+      class="secondary-button"
+      v-if="
+        $store.state.isBookmarksFetching && !$store.state.isBookmarkPagesEnd
+      "
+    >
       Load more
     </button>
     <button
       class="secondary-button"
-      v-if="!$store.state.isBookmarksFetching && !$store.state.isBookmarkPagesEnd"
+      v-if="
+        !$store.state.isBookmarksFetching && !$store.state.isBookmarkPagesEnd
+      "
       @click="$store.dispatch('getBookmarkPage')"
     >
       Load more
@@ -22,14 +29,14 @@
 </template>
 
 <script>
-import Bookmark from "~/components/Bookmark";
+import Bookmark from '~/components/Bookmark'
 
 export default {
-  name: "bookmarks",
+  name: 'bookmarks',
   components: {
     Bookmark
   }
-};
+}
 </script>
 
 <style scoped>
@@ -57,5 +64,4 @@ h1 {
 button {
   margin: 40px 0 0 0;
 }
-
 </style>

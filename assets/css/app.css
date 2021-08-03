@@ -1,4 +1,4 @@
-@import url("./variables.css");
+@import url('./variables.css');
 
 html,
 body,
@@ -6,7 +6,7 @@ body,
 #__layout {
   /* font-family: "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI",
     Roboto, "Helvetica Neue", Arial, sans-serif; */
-    font-family: system-ui;
+  font-family: system-ui;
   font-size: 16px;
   word-spacing: 1px;
   -ms-text-size-adjust: 100%;

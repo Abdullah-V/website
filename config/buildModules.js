@@ -1,3 +1,3 @@
-const buildModules = ["@nuxtjs/color-mode"];
+const buildModules = ['@nuxtjs/color-mode']
 
-export default buildModules;
+export default buildModules

@@ -1,27 +1,45 @@
 <template>
-  <div
-    class="project-root"
-  >
-    <img v-if="projectData.imageURL" class="project-image" :src="projectData.imageURL" alt="image from project">
+  <div class="project-root">
+    <img
+      v-if="projectData.imageURL"
+      class="project-image"
+      :src="projectData.imageURL"
+      alt="image from project"
+    />
     <h2 class="project-title">{{ projectData.name }}</h2>
     <h4 class="project-description">{{ projectData.description }}</h4>
     <div class="tech-stack">
-      <img :title="item.name" :key="item.name" v-for="item in projectData.techStack" class="icon" :src="require(`~/assets/icons/${item.iconFileName}`)" alt="icon">
+      <img
+        :title="item.name"
+        :key="item.name"
+        v-for="item in projectData.techStack"
+        class="icon"
+        :src="require(`~/assets/icons/${item.iconFileName}`)"
+        alt="icon"
+      />
     </div>
     <div class="project-action-buttons">
-      <button v-if="projectData.liveDemoLink" @click="openLink(projectData.liveDemoLink)" class="live">Live demo</button>
-      <button @click="openLink(projectData.sourceCodeLink)" class="source">Source codes</button>
+      <button
+        v-if="projectData.liveDemoLink"
+        @click="openLink(projectData.liveDemoLink)"
+        class="live"
+      >
+        Live demo
+      </button>
+      <button @click="openLink(projectData.sourceCodeLink)" class="source">
+        Source codes
+      </button>
     </div>
   </div>
 </template>
 
 <script>
 export default {
-  name: "Project",
-  props: ["projectData"],
+  name: 'Project',
+  props: ['projectData'],
   methods: {
     openLink(link) {
-      if(process.client) {
+      if (process.client) {
         window.open(link)
       }
     }
@@ -30,7 +48,6 @@ export default {
 </script>
 
 <style scoped>
-
 .project-root {
   width: 350px;
   height: auto;
@@ -104,6 +121,4 @@ export default {
   background: var(--primary);
   color: white;
 }
-
-
 </style>

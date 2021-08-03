@@ -1,30 +1,34 @@
 <template>
-  <div
-    class="job-root"
-  >
-    <img :src="require(`~/assets/images/${job.imageName}`)" :alt="job.name">
+  <div class="job-root">
+    <img :src="require(`~/assets/images/${job.imageName}`)" :alt="job.name" />
 
     <div class="job-infos">
-      <a v-if="job.link" target="_blank" :href="job.link"><h1>{{ job.name }}</h1></a>
+      <a v-if="job.link" target="_blank" :href="job.link"
+        ><h1>{{ job.name }}</h1></a
+      >
       <h1 v-else>{{ job.name }}</h1>
       <div class="infos-with-icons">
-        <span title="Position" class="info-with-icon"><i class="fas fa-user"></i> {{ job.position }}</span>
-        <span title="Location" class="info-with-icon"><i class="fas fa-map-marker-alt"></i> {{ job.location }}</span>
-        <span title="Interval" class="info-with-icon"><i class="fas fa-clock"></i> {{ job.interval }}</span>
+        <span title="Position" class="info-with-icon"
+          ><i class="fas fa-user"></i> {{ job.position }}</span
+        >
+        <span title="Location" class="info-with-icon"
+          ><i class="fas fa-map-marker-alt"></i> {{ job.location }}</span
+        >
+        <span title="Interval" class="info-with-icon"
+          ><i class="fas fa-clock"></i> {{ job.interval }}</span
+        >
       </div>
     </div>
-
   </div>
 </template>
 
 <script>
 export default {
-  props: ["job"]
+  props: ['job']
 }
 </script>
 
 <style scoped>
-
 .job-root {
   width: 45%;
   height: 180px;

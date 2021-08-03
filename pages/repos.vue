@@ -2,16 +2,20 @@
   <div class="repos-root">
     <h1>All repositories</h1>
     <div class="repos-container">
-      <Repo v-for="repo in $store.state.allRepos" :repo-data="repo" :key="repo.id" />
+      <Repo
+        v-for="repo in $store.state.allRepos"
+        :repo-data="repo"
+        :key="repo.id"
+      />
     </div>
   </div>
 </template>
 
 <script>
-import Repo from "~/components/Repo";
+import Repo from '~/components/Repo'
 
 export default {
-  name: "repos",
+  name: 'repos',
   components: {
     Repo
   }
@@ -19,7 +23,6 @@ export default {
 </script>
 
 <style scoped>
-
 h1 {
   text-align: center;
   margin: 60px 0 50px 0;
@@ -32,5 +35,4 @@ h1 {
   align-items: center;
   justify-content: space-evenly;
 }
-
 </style>

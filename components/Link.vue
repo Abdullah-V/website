@@ -1,8 +1,5 @@
 <template>
-  <div
-    class="link-root"
-    @click="openLink"
-  >
+  <div class="link-root" @click="openLink">
     <img :src="require(`~/assets/icons/social/${linkInfo.icon}`)" />
     <span>{{ linkInfo.name }}</span>
   </div>
@@ -10,15 +7,15 @@
 
 <script>
 export default {
-  props: ["linkInfo"],
+  props: ['linkInfo'],
   methods: {
     openLink() {
       if (process.client) {
-        window.open(this.linkInfo.url);
+        window.open(this.linkInfo.url)
       }
     }
   }
-};
+}
 </script>
 
 <style scoped>

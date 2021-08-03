@@ -3,10 +3,10 @@ export default {
     lang: 'en',
     name: 'Dotslashroot',
     short_name: 'Dotslashroot',
-    description: "Personal website of Abdullah V.",
-    theme_color: "#106EE3",
+    description: 'Personal website of Abdullah V.',
+    theme_color: '#106EE3'
   },
   meta: {
-    author: 'Abdullah Veliyev',
-  },
+    author: 'Abdullah Veliyev'
+  }
 }

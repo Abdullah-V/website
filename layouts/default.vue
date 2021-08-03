@@ -21,40 +21,40 @@
 </template>
 
 <script>
-import Navbar from "~/components/Navbar";
+import Navbar from '~/components/Navbar'
 
 export default {
   created() {
-    this.setData();
+    this.setData()
 
     if (process.client) {
       if (
-        window.location.href.startsWith("http://") &&
-        !window.location.href.startsWith("http://localhost")
+        window.location.href.startsWith('http://') &&
+        !window.location.href.startsWith('http://localhost')
       ) {
         window.location.href = window.location.href.replace(
-          "http://",
-          "https://"
-        );
+          'http://',
+          'https://'
+        )
       }
 
-      window.addEventListener("scroll", () => {
-        var sh = window.pageYOffset; // scroll height
-        var btn = this.$el.querySelector("#move-top");
+      window.addEventListener('scroll', () => {
+        var sh = window.pageYOffset // scroll height
+        var btn = this.$el.querySelector('#move-top')
         if (sh >= 456) {
-          btn.classList.add("active");
+          btn.classList.add('active')
         } else if (sh < 456) {
-          btn.classList.remove("active");
+          btn.classList.remove('active')
         }
 
-        var d = document.documentElement;
-        var offset = d.scrollTop + window.innerHeight;
-        var height = d.offsetHeight;
+        var d = document.documentElement
+        var offset = d.scrollTop + window.innerHeight
+        var height = d.offsetHeight
 
         if (offset >= height - 60) {
-          btn.classList.remove("active");
+          btn.classList.remove('active')
         }
-      });
+      })
     }
   },
   methods: {
@@ -63,35 +63,35 @@ export default {
         window.scrollTo({
           top: 0,
           left: 0,
-          behavior: "smooth"
-        });
+          behavior: 'smooth'
+        })
       }
     },
     async setData() {
       this.$axios
-        .$get("https://api.github.com/users/Abdullah-V/repos")
+        .$get('https://api.github.com/users/Abdullah-V/repos')
         .then(async result => {
           result = await result.sort(function(a, b) {
-            return b.stargazers_count - a.stargazers_count;
-          });
-          this.$store.state.allRepos = await result;
-        });
+            return b.stargazers_count - a.stargazers_count
+          })
+          this.$store.state.allRepos = await result
+        })
 
       this.$axios
         .$get(
-          "https://raw.githubusercontent.com/Abdullah-V/DATA/master/website/gh-pinned-repos.json"
+          'https://raw.githubusercontent.com/Abdullah-V/DATA/master/website/gh-pinned-repos.json'
         )
         .then(async result => {
-          this.$store.state.pinnedRepos = await result;
-        });
+          this.$store.state.pinnedRepos = await result
+        })
 
-      this.$store.dispatch("getBookmarkPage");
+      this.$store.dispatch('getBookmarkPage')
     }
   },
   components: {
     Navbar
   }
-};
+}
 </script>
 
 <style scoped>

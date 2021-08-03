@@ -1,48 +1,82 @@
 <template>
   <div id="navbar-root">
-
     <div id="large-devices">
       <h1 @click="routeToHome()" style="cursor:pointer;">. / Abdullah</h1>
       <div class="links">
+        <a
+          class="link"
+          :href="path.path"
+          :key="path.name"
+          v-for="path in paths"
+          >{{ path.name }}</a
+        >
 
+        <button
+          v-show="$colorMode.preference === 'light'"
+          @click="$colorMode.preference = 'dark'"
+          class="mode-switcher"
+        >
+          <i class="fas fa-moon"></i>
+        </button>
 
-        <a class="link" :href="path.path" :key="path.name" v-for="path in paths">{{ path.name }}</a>
-
-        <button v-show="$colorMode.preference === 'light'" @click="$colorMode.preference = 'dark'" class="mode-switcher"><i class="fas fa-moon"></i> </button>
-
-        <button v-show="$colorMode.preference === 'dark'" @click="$colorMode.preference = 'light'" class="mode-switcher"><i class="fas fa-sun"></i></button>
+        <button
+          v-show="$colorMode.preference === 'dark'"
+          @click="$colorMode.preference = 'light'"
+          class="mode-switcher"
+        >
+          <i class="fas fa-sun"></i>
+        </button>
 
         <!-- <button @click="$colorMode.preference = $colorMode.preference ==='light' ? 'dark' : 'light'" class="mode-switcher"><i class="fas fa-adjust"></i></button> -->
-
       </div>
 
       <i @click="isMenu = true" class="hamburger-icon fas fa-bars"></i>
     </div>
 
-
     <div v-if="isMenu" id="narrow-devices">
-
-      <div id="narrow-devices-menu-header"><h2>Menu</h2> <i @click="isMenu = false" class="fas fa-times"></i> </div>
-
-      <div class="narrow-devices-menu-links">
-        <a class="narrow-menu-link" @click="closeMobileMenu()" :href="path.path" :key="path.name" v-for="path in paths">{{ path.name }}</a>
+      <div id="narrow-devices-menu-header">
+        <h2>Menu</h2>
+        <i @click="isMenu = false" class="fas fa-times"></i>
       </div>
 
-      <button @click="$colorMode.preference = 'light'" style="font-size: 24px" v-if="$colorMode.preference === 'dark'" class="narrow-menu-link"><i class="fas fa-sun"></i></button>
-      <button @click="$colorMode.preference = 'dark'" style="font-size: 24px" v-if="$colorMode.preference === 'light'" class="narrow-menu-link"><i class="fas fa-moon"></i></button>
+      <div class="narrow-devices-menu-links">
+        <a
+          class="narrow-menu-link"
+          @click="closeMobileMenu()"
+          :href="path.path"
+          :key="path.name"
+          v-for="path in paths"
+          >{{ path.name }}</a
+        >
+      </div>
 
+      <button
+        @click="$colorMode.preference = 'light'"
+        style="font-size: 24px"
+        v-if="$colorMode.preference === 'dark'"
+        class="narrow-menu-link"
+      >
+        <i class="fas fa-sun"></i>
+      </button>
+      <button
+        @click="$colorMode.preference = 'dark'"
+        style="font-size: 24px"
+        v-if="$colorMode.preference === 'light'"
+        class="narrow-menu-link"
+      >
+        <i class="fas fa-moon"></i>
+      </button>
     </div>
 
     <span style="display: none" v-if="$colorMode.preference === 'system'">
-          {{ $colorMode.preference = 'dark' }}
+      {{ ($colorMode.preference = 'dark') }}
     </span>
-
   </div>
 </template>
 
 <script>
 export default {
-  name: "Navbar",
+  name: 'Navbar',
   data() {
     return {
       isMenu: false,
@@ -75,20 +109,21 @@ export default {
       this.isMenu = false
     },
     routeToHome() {
-      this.$route.hash === '#top' ? this.$router.push({path: '/'}) : this.$router.push({path: '/#top'})
+      this.$route.hash === '#top'
+        ? this.$router.push({ path: '/' })
+        : this.$router.push({ path: '/#top' })
     }
   }
 }
 </script>
 
 <style scoped>
-
 .dark-mode #navbar-root {
-  --bg: rgba(17, 24, 39,0.6)
+  --bg: rgba(17, 24, 39, 0.6);
 }
 
 .light-mode #navbar-root {
-  --bg: rgba(250, 252, 255,0.3)
+  --bg: rgba(250, 252, 255, 0.3);
 }
 
 #navbar-root {
@@ -145,7 +180,7 @@ export default {
   position: fixed;
   top: 30px;
   left: 50%;
-  transform: translate(-50%,0%);
+  transform: translate(-50%, 0%);
   width: 95%;
   height: 430px;
   margin: auto;
@@ -191,7 +226,7 @@ export default {
   font-size: 18px;
 }
 
-@media only screen and (max-width: 900px){
+@media only screen and (max-width: 900px) {
   .links {
     display: none;
   }
@@ -206,5 +241,4 @@ export default {
     display: flex;
   }
 }
-
 </style>

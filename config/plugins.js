@@ -1,12 +1,12 @@
 const plugins = [
   {
-    src: "~/plugins/aos",
+    src: '~/plugins/aos',
     ssr: false
   },
   {
-    src: "~/plugins/vue-notification",
+    src: '~/plugins/vue-notification',
     ssr: false
-  },
+  }
 ]
 
 export default plugins

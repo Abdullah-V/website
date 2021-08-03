@@ -26,8 +26,8 @@
 
 <script>
 export default {
-  props: ["infos"]
-};
+  props: ['infos']
+}
 </script>
 
 <style scoped>

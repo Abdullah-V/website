@@ -1,12 +1,16 @@
 <template>
-  <div
-    class="skill-root"
-  >
-    <img class="skill-icon" :src="require(`~/assets/icons/${skillData.iconFileName}`)" alt="">
+  <div class="skill-root">
+    <img
+      class="skill-icon"
+      :src="require(`~/assets/icons/${skillData.iconFileName}`)"
+      alt=""
+    />
     <div class="skill-container">
       <h2>{{ skillData.name }}</h2>
       <div class="progress-bar">
-        <div class="inner-progress-bar" :style="{width: skillData.percent}">{{ skillData.percent }}</div>
+        <div class="inner-progress-bar" :style="{ width: skillData.percent }">
+          {{ skillData.percent }}
+        </div>
       </div>
     </div>
   </div>
@@ -14,13 +18,12 @@
 
 <script>
 export default {
-  name: "Skill",
+  name: 'Skill',
   props: ['skillData']
 }
 </script>
 
 <style scoped>
-
 .skill-root {
   width: 300px;
   height: 100px;
@@ -63,5 +66,4 @@ export default {
   color: white;
   padding-right: 10px;
 }
-
 </style>
