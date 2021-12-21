@@ -24,7 +24,8 @@ export const actions = {
       `https://api.raindrop.io/rest/v1/raindrops/0`,
       `?perpage=50`,
       `&page=${context.state.nextBookmarkPage}`,
-      `&sort=-created`
+      `&sort=-created`,
+      `&search=%23Public`
     ].join('')
 
     context.state.isBookmarksFetching = true
