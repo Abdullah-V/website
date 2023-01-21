@@ -1,0 +1,43 @@
+html,
+body {
+  /* font-family: "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, "Helvetica Neue", Arial, sans-serif; */
+  font-family: system-ui;
+  font-size: 16px;
+  word-spacing: 1px;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  width: 100%;
+  height: auto;
+  color: var(--black);
+  /* background: var(--primary-background); */
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  outline: none;
+  scroll-behavior: smooth;
+  text-decoration: none;
+  border: 0;
+  transition: 400ms background;
+}
+
+html body {
+  width: 100%;
+  height: 100%;
+  max-width: 1500px;
+}
+
+button {
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+}

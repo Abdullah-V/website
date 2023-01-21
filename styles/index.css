@@ -1,0 +1,22 @@
+#headline {
+  font-size: 60px;
+}
+
+#headline .name {
+  text-shadow: 6px 6px 0px rgba(255, 119, 51, 0.5);
+}
+
+#headline .surname {
+  color: #f5f5f5;
+}
+
+.about-me {
+  width: 256px;
+  height: 64px;
+  margin-top: 48px;
+  border-radius: 32px;
+  color: #ff7733;
+  background-color: rgba(255, 119, 51, 0.25);
+  font-size: 24px;
+  font-weight: bold;
+}
