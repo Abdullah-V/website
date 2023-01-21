@@ -1,0 +1,19 @@
+{
+    "projects": [
+        {
+            "name": "HMSC",
+            "imageURL": "https://github.com/Abdullah-V/media/blob/master/HMSC.png?raw=true",
+            "description": "📂 HMSC (How Much Stuff CLI) analyst for your files and folders"
+        },
+        {
+            "name": "Twitter Clone",
+            "imageURL": "https://github.com/Abdullah-V/media/blob/master/twitterClone.png?raw=true",
+            "description": "🐦 Fully functional twitter clone"
+        },
+        {
+            "name": "Cargoglobal",
+            "imageURL": "https://raw.githubusercontent.com/Abdullah-V/media/master/cargoglobal.png",
+            "description": "🚚 Cargoglobal is a site for sharing logistics advertisements"
+        }
+    ]
+}

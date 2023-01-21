@@ -4,16 +4,46 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./styles/main.css">
-    <link rel="stylesheet" href="./styles/index.css">
+    <link rel="stylesheet" href="./styles/main.css" />
+    <link rel="stylesheet" href="./styles/index.css" />
+    <script>
+      fetch("./projects.json")
+        .then((response) => response.json())
+        .then((json) => {
+          projectsDiv = document.getElementsByClassName("projects")[0];
+          for (let p of json.projects) {
+            projectsDiv.insertAdjacentHTML(
+              "beforeend",
+              `<div class="project"> \
+        <img \
+          src="${p.imageURL}" \
+          alt="image from project" \
+        /> \
+        <div class="about"> \
+          <h3>${p.name}</h3> \
+          <h5> \
+            ${p.description} \
+          </h5> \
+        </div> \
+      </div>`
+            );
+          }
+        });
+    </script>
     <title>Document</title>
   </head>
   <body>
     <h1 id="headline">
       Hi there, <br />
-      I'm <span class="name">Abdullah</span> <span class="surname">Velisoy,</span> <br />
+      I'm <span class="name">Abdullah</span>
+      <span class="surname">Velisoy,</span> <br />
       Full-stack developer
     </h1>
     <button class="about-me">About me</button>
+    <div class="section-intro">
+      <h2 style="text-shadow: 4px 4px 0px rgba(242, 175, 41, 0.5)">Projects</h2>
+      <h4>My notable projects</h4>
+    </div>
+    <div class="projects"></div>
   </body>
 </html>
